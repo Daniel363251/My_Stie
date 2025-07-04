@@ -151,7 +151,7 @@ My_Site/
    git add .
    git commit -m "Initial commit"
    git branch -M main
-   git remote add origin https://github.com/username/username.github.io.git
+   git remote add origin https://github.com/Daniel363251/My_Stie.git
    git push -u origin main
    ```
 
