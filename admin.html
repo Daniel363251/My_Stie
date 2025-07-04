@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网站管理后台</title>
+    <link rel="stylesheet" href="admin-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- 侧边栏 -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-cog"></i> 管理后台</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#dashboard" class="nav-link active" data-section="dashboard">
+                        <i class="fas fa-tachometer-alt"></i> 仪表盘
+                    </a></li>
+                    <li><a href="#profile" class="nav-link" data-section="profile">
+                        <i class="fas fa-user"></i> 个人信息
+                    </a></li>
+                    <li><a href="#experience" class="nav-link" data-section="experience">
+                        <i class="fas fa-briefcase"></i> 项目经验
+                    </a></li>
+                    <li><a href="#articles" class="nav-link" data-section="articles">
+                        <i class="fas fa-newspaper"></i> 文章管理
+                    </a></li>
+                    <li><a href="#settings" class="nav-link" data-section="settings">
+                        <i class="fas fa-cog"></i> 网站设置
+                    </a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="index.html" class="btn-back">
+                    <i class="fas fa-arrow-left"></i> 返回网站
+                </a>
+            </div>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <!-- 仪表盘 -->
+            <section id="dashboard" class="content-section active">
+                <div class="section-header">
+                    <h1>仪表盘</h1>
+                    <p>网站数据概览</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="articles-count">6</h3>
+                            <p>文章总数</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="projects-count">3</h3>
+                            <p>项目经验</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="views-count">1,234</h3>
+                            <p>页面浏览量</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="last-update">今天</h3>
+                            <p>最后更新</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 个人信息管理 -->
+            <section id="profile" class="content-section">
+                <div class="section-header">
+                    <h1>个人信息管理</h1>
+                    <p>编辑您的个人资料和简介</p>
+                </div>
+                <form class="profile-form">
+                    <div class="form-group">
+                        <label for="name">姓名</label>
+                        <input type="text" id="name" value="Ziyan">
+                    </div>
+                    <div class="form-group">
+                        <label for="title">职位标题</label>
+                        <input type="text" id="title" value="AI驱动的数字化供应链产品创新">
+                    </div>
+                    <div class="form-group">
+                        <label for="bio">个人简介</label>
+                        <textarea id="bio" rows="4">我是一名专注于AI与供应链结合的产品经理，致力于通过智能技术推动供应链数字化转型。拥有丰富的产品管理经验和深厚的技术背景，擅长将复杂的AI算法转化为实用的商业解决方案。</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">邮箱</label>
+                        <input type="email" id="email" value="ziyan@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="linkedin">LinkedIn</label>
+                        <input type="text" id="linkedin" value="linkedin.com/in/ziyan">
+                    </div>
+                    <div class="form-group">
+                        <label for="github">GitHub</label>
+                        <input type="text" id="github" value="github.com/ziyan">
+                    </div>
+                    <button type="submit" class="btn-primary">保存更改</button>
+                </form>
+            </section>
+
+            <!-- 项目经验管理 -->
+            <section id="experience" class="content-section">
+                <div class="section-header">
+                    <h1>项目经验管理</h1>
+                    <button class="btn-primary" onclick="openProjectModal()">添加新项目</button>
+                </div>
+                <div class="projects-list">
+                    <div class="project-item">
+                        <div class="project-info">
+                            <h3>智能供应链管理平台</h3>
+                            <span class="project-date">2023 - 至今</span>
+                            <p>主导开发AI驱动的智能供应链管理平台...</p>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn-edit" onclick="editProject(1)"><i class="fas fa-edit"></i></button>
+                            <button class="btn-delete" onclick="deleteProject(1)"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-info">
+                            <h3>智能物流调度系统</h3>
+                            <span class="project-date">2022 - 2023</span>
+                            <p>设计并实施基于AI的智能物流调度系统...</p>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn-edit" onclick="editProject(2)"><i class="fas fa-edit"></i></button>
+                            <button class="btn-delete" onclick="deleteProject(2)"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 文章管理 -->
+            <section id="articles" class="content-section">
+                <div class="section-header">
+                    <h1>文章管理</h1>
+                    <button class="btn-primary" onclick="openArticleModal()">添加新文章</button>
+                </div>
+                <div class="articles-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>标题</th>
+                                <th>分类</th>
+                                <th>发布日期</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AI驱动的智能供应链：未来已来</td>
+                                <td>智能供应链</td>
+                                <td>2024-01-15</td>
+                                <td><span class="status published">已发布</span></td>
+                                <td>
+                                    <button class="btn-edit" onclick="editArticle(1)"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-delete" onclick="deleteArticle(1)"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>数字化供应链转型实践指南</td>
+                                <td>数字化技术</td>
+                                <td>2024-01-08</td>
+                                <td><span class="status published">已发布</span></td>
+                                <td>
+                                    <button class="btn-edit" onclick="editArticle(2)"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-delete" onclick="deleteArticle(2)"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 网站设置 -->
+            <section id="settings" class="content-section">
+                <div class="section-header">
+                    <h1>网站设置</h1>
+                    <p>配置网站的基本设置</p>
+                </div>
+                <form class="settings-form">
+                    <div class="form-group">
+                        <label for="site-title">网站标题</label>
+                        <input type="text" id="site-title" value="Ziyan - AI驱动的数字化供应链产品创新">
+                    </div>
+                    <div class="form-group">
+                        <label for="site-description">网站描述</label>
+                        <textarea id="site-description" rows="3">专注于AI与供应链结合的产品经理，致力于推动供应链数字化转型</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="theme-color">主题色</label>
+                        <input type="color" id="theme-color" value="#2563eb">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="dark-mode" checked>
+                            启用暗黑模式
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="analytics" checked>
+                            启用网站分析
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-primary">保存设置</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <!-- 文章编辑模态框 -->
+    <div id="articleModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>编辑文章</h2>
+                <span class="close" onclick="closeModal('articleModal')">&times;</span>
+            </div>
+            <form class="modal-form">
+                <div class="form-group">
+                    <label for="article-title">文章标题</label>
+                    <input type="text" id="article-title">
+                </div>
+                <div class="form-group">
+                    <label for="article-category">分类</label>
+                    <select id="article-category">
+                        <option value="supply-chain">智能供应链</option>
+                        <option value="technology">数字化技术</option>
+                        <option value="innovation">创新实践</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="article-excerpt">摘要</label>
+                    <textarea id="article-excerpt" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="article-content">内容</label>
+                    <textarea id="article-content" rows="10"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="article-tags">标签（用逗号分隔）</label>
+                    <input type="text" id="article-tags">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeModal('articleModal')">取消</button>
+                    <button type="submit" class="btn-primary">保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 项目编辑模态框 -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>编辑项目</h2>
+                <span class="close" onclick="closeModal('projectModal')">&times;</span>
+            </div>
+            <form class="modal-form">
+                <div class="form-group">
+                    <label for="project-title">项目名称</label>
+                    <input type="text" id="project-title">
+                </div>
+                <div class="form-group">
+                    <label for="project-date">项目时间</label>
+                    <input type="text" id="project-date" placeholder="例如：2023 - 至今">
+                </div>
+                <div class="form-group">
+                    <label for="project-description">项目描述</label>
+                    <textarea id="project-description" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="project-achievements">主要成果（每行一个）</label>
+                    <textarea id="project-achievements" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="project-tags">技术标签（用逗号分隔）</label>
+                    <input type="text" id="project-tags">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeModal('projectModal')">取消</button>
+                    <button type="submit" class="btn-primary">保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>

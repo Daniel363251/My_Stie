@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ziyan's Personal Website</title>
+    <meta name="description" content="Ziyan的个人网站 - AI、产品与创新领域的专业分享">
+    <meta name="keywords" content="AI, 产品, 创新, 技术, 个人网站">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Ziyan's Space</h2>
+            </div>
+            <ul class="nav-menu">
+                 <li class="nav-item">
+                     <a href="index.html" class="nav-link active">Homepage</a>
+                 </li>
+                 <li class="nav-item">
+                     <a href="about.html" class="nav-link">About Me</a>
+                 </li>
+                <li class="nav-item">
+                    <a href="experience.html" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="articles.html" class="nav-link">Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-controls">
+                <div class="theme-toggle">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </div>
+                <div class="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主页面 -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">欢迎来到我的数字空间</h1>
+                    <p class="hero-subtitle">专注于AI驱动的数字化供应链产品创新</p>
+                    <div class="hero-buttons">
+                        <a href="#about" class="btn btn-primary">了解更多</a>
+                        <a href="#contact" class="btn btn-secondary">联系我</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="avatar-container">
+                        <div class="avatar" role="img" aria-label="用户头像" title="用户头像"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview Sections Container -->
+        <div class="overview-sections-container">
+            <div class="container">
+                <div class="overview-grid">
+                    <!-- About Me Section -->
+                    <section id="about" class="section about-overview">
+                        <div class="overview-card">
+                            <div class="overview-icon">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="overview-content">
+                                <h2 class="overview-title">About Me</h2>
+                                <p class="overview-description">
+                                    供应链产品经理，专注于AI技术在数字化供应链领域的应用与创新。
+                                    致力于通过AI技术优化供应链流程，提升运营效率。
+                                </p>
+                                <div class="overview-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-number">AI</span>
+                                        <span class="stat-label">驱动优化</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">数字化</span>
+                                        <span class="stat-label">供应链</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">产品</span>
+                                        <span class="stat-label">设计</span>
+                                    </div>
+                                </div>
+                                <a href="about.html" class="overview-link">
+                                    了解更多 <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Experience Section -->
+                    <section id="experience" class="section experience-overview">
+                        <div class="overview-card">
+                            <div class="overview-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="overview-content">
+                                <h2 class="overview-title">Experience</h2>
+                                <p class="overview-description">
+                                    丰富的AI驱动供应链项目经验，包括智能供应链管理平台、智能物流调度系统、
+                                    供应商风险管理系统等多个成功项目。
+                                </p>
+                                <div class="overview-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-number">3+</span>
+                                        <span class="stat-label">年项目经验</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">5+</span>
+                                        <span class="stat-label">成功项目</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">200+</span>
+                                        <span class="stat-label">覆盖城市</span>
+                                    </div>
+                                </div>
+                                <a href="experience.html" class="overview-link">
+                                    查看详情 <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Articles Section -->
+                    <section id="articles" class="section articles-overview">
+                        <div class="overview-card">
+                            <div class="overview-icon">
+                                <i class="fas fa-pen-alt"></i>
+                            </div>
+                            <div class="overview-content">
+                                <h2 class="overview-title">Articles</h2>
+                                <p class="overview-description">
+                                    分享AI与供应链管理的深度思考，涵盖技术洞察、行业分析、未来趋势等多个维度，
+                                    为行业发展提供有价值的观点和见解。
+                                </p>
+                                <div class="overview-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-number">15+</span>
+                                        <span class="stat-label">技术文章</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">3</span>
+                                        <span class="stat-label">专业领域</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">1000+</span>
+                                        <span class="stat-label">阅读量</span>
+                                    </div>
+                                </div>
+                                <a href="articles.html" class="overview-link">
+                                    查看文章 <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Contact Section -->
+                    <section id="contact" class="section contact-overview">
+                        <div class="overview-card">
+                            <div class="overview-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="overview-content">
+                                <h2 class="overview-title">Contact</h2>
+                                <p class="overview-description">
+                                    欢迎与我联系，探讨AI驱动的供应链解决方案、技术合作机会，
+                                    或分享您在供应链数字化转型方面的想法和需求。
+                                </p>
+                                <div class="overview-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-number">24h</span>
+                                        <span class="stat-label">响应时间</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">多种</span>
+                                        <span class="stat-label">联系方式</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">全球</span>
+                                        <span class="stat-label">合作范围</span>
+                                    </div>
+                                </div>
+                                <a href="contact.html" class="overview-link">
+                                    联系我 <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Ziyan's Space</h3>
+                    <p>专注于AI、产品与创新的数字空间</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#about">关于我</a></li>
+                        <li><a href="#experience">经验</a></li>
+                        <li><a href="#articles">文章</a></li>
+                        <li><a href="#contact">联系</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>关注我</h4>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ziyan's Space. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
