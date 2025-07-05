@@ -192,6 +192,39 @@ My_Site/
 
 3. **跟随提示完成部署**
 
+### Gitee Pages部署
+
+1. **注册Gitee账户**
+   - 访问 [gitee.com](https://gitee.com) 注册账户
+   - 完成实名认证（Gitee Pages需要实名认证）
+
+2. **创建Gitee仓库**
+   - 点击右上角"+"号，选择"新建仓库"
+   - 填写仓库名称（建议与项目名相同）
+   - 选择仓库类型为"公开"
+   - 点击"创建"
+
+3. **上传文件**
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M master
+   git remote add origin https://gitee.com/your-username/repository-name.git
+   git push -u origin master
+   ```
+
+4. **启用Gitee Pages**
+   - 进入仓库页面
+   - 点击"服务"菜单，选择"Gitee Pages"
+   - 选择部署分支（通常是master）
+   - 点击"启动"
+
+5. **访问网站**
+   - 启动成功后，会生成访问链接
+   - 网站将在 `https://your-username.gitee.io/repository-name` 可用
+   - 如需自定义域名，可在Gitee Pages设置中绑定
+
 ## 🔧 技术栈
 
 - **HTML5**: 语义化标记
