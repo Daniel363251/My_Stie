@@ -14,7 +14,6 @@
 - **无障碍访问**: 支持键盘导航和屏幕阅读器
 
 ## 📁 项目结构
-
 ```
 My_Site/
 ├── index.html          # 主页面文件
@@ -23,7 +22,6 @@ My_Site/
 ├── README.md           # 项目说明文档
 └── personal_website_prompt.md  # 需求文档
 ```
-
 ## 🚀 快速开始
 
 ### 本地运行
