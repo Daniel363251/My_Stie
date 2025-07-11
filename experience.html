@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experience - Ziyan's Space</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="material-grid.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -49,10 +50,10 @@
     <main class="main-content">
         <!-- Experience Hero Section -->
         <section class="experience-hero section">
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">项目经验</h1>
-                    <p class="hero-subtitle">
+            <div class="md-container">
+                <div class="md-page-title">
+                    <h1 style="color: white;">项目经验</h1>
+                    <p style="color: white;">
                         深度参与多个AI驱动的供应链项目，从概念设计到落地实施，
                         积累了丰富的实战经验和成功案例。
                     </p>
@@ -60,187 +61,339 @@
             </div>
         </section>
 
+        <!-- 移除了筛选功能区域 -->
+
         <!-- Projects Section -->
-        <section class="timeline-section section">
-            <div class="container">
-                <h2 class="section-title">项目经验</h2>
-                <div class="timeline">
-                    <div class="timeline-markers">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-marker"></div>
-                    </div>
-                    <div class="timeline-content-wrapper">
-                        <div class="timeline-item">
-                            <div class="timeline-content">
-                            <div class="project-header">
-                                <div class="project-icon">
-                                    <i class="fas fa-brain"></i>
-                                </div>
-                                <div class="project-meta">
-                                    <h3 class="project-title">智能供应链管理平台</h3>
-                                    <span class="project-period">2023 - 至今</span>
-                                </div>
+        <section class="projects-section section">
+            <div class="md-container">
+                <div class="md-section-title">
+                    <h2>项目经验</h2>
+                </div>
+                <div class="md-row">
+                    <!-- 正大集团 Makro iWMS 商超智能仓储项目 -->
+                    <div class="md-col-4 md-col-tablet-6 md-col-mobile-12">
+                        <div class="md-card">
+                            <div class="md-card-media">
+                                <i class="fas fa-warehouse"></i>
                             </div>
-                        
-                            <div class="project-description">
-                                <p>
-                                    主导开发AI驱动的智能供应链管理平台，通过机器学习算法优化库存管理、
-                                    需求预测和供应商协同，实现供应链全链路数字化管理。该平台集成了
-                                    先进的人工智能技术，为企业提供智能化的供应链解决方案。
+                            <div class="md-card-content">
+                                <div class="md-card-meta">
+                                    <div class="md-card-date">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span>2023.12-2024.6</span>
+                                    </div>
+                                    <div class="md-card-category">数字化</div>
+                                    <div class="md-card-role">
+                                        <i class="fas fa-user-tie"></i>
+                                        <span>产品负责人</span>
+                                    </div>
+                                    <div class="md-card-amount">
+                                        <i class="fas fa-yen-sign"></i>
+                                        <span>700万</span>
+                                    </div>
+                                </div>
+                                <h3 class="md-card-title">正大集团 Makro iWMS 商超智能仓储项目</h3>
+                                <p class="md-card-excerpt">
+                                    为正大集团泰国 Makro 商超打造 O2O 智能仓储系统，支撑线上订单规模化增长，
+                                    提升仓配履约效率，构建数智化商超履约标杆。
+                                    截至目前，系统已覆盖泰国 159家门店，累计 O2O 订单量破亿，客户满意度明显提升
+                                    Makro Pro APP下载量跻身泰国电商类 Top3，成为泰国最大的O2O电商平台。
                                 </p>
-                            </div>
-                        
-                            <div class="project-highlights">
-                                <div class="highlight-grid">
-                                    <div class="highlight-item">
-                                        <h4>核心功能</h4>
-                                        <ul>
-                                            <li>基于机器学习的智能需求预测系统</li>
-                                            <li>动态库存优化与自动补货算法</li>
-                                            <li>供应商风险评估与协同管理</li>
-                                            <li>实时供应链可视化监控</li>
-                                            <li>智能异常检测与预警系统</li>
-                                        </ul>
-                                    </div>
-                                    
-                                    <div class="highlight-item">
-                                        <h4>主要成果</h4>
-                                        <ul>
-                                            <li>库存周转率提升35%，缺货率降低60%</li>
-                                            <li>需求预测准确率达到92%</li>
-                                            <li>供应商协同效率提升50%</li>
-                                            <li>整体供应链成本降低25%</li>
-                                            <li>客户满意度提升至96%</li>
-                                        </ul>
+                                <div class="md-card-highlights">
+                                    <div class="md-highlight-grid">
+                                        <div class="md-highlight-item">
+                                            <h4>核心功能</h4>
+                                            <ul>
+                                                <li>智能波次引擎与配置策略</li>
+                                                <li>引导式作业模式</li>
+                                                <li>实时监控与履约看板</li>
+                                                <li>劳动力力看板与优化</li>
+                                                <li>智能集货位推荐</li>
+                                                <li>标准化复制能力</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="md-highlight-item">
+                                            <h4>主要成果</h4>
+                                            <ul>
+                                                <li>拣选效率提升40%（16.99min/单）</li>
+                                                <li>订单交付效率提升30%</li>
+                                                <li>交付准时率提升15%+</li>
+                                                <li>O2O订单增量破亿</li>
+                                                <li>客户满意度提升至96%</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        
-                            <div class="project-tags">
-                                <span class="tag">智能供应链</span>
-                                <span class="tag">需求预测</span>
-                                <span class="tag">库存优化</span>
-                                <span class="tag">产品管理</span>
+                                <div class="md-card-tags">
+                                    <span class="md-tag">零售O2O</span>
+                                    <span class="md-tag">波次管理</span>
+                                    <span class="md-tag">库存优化</span>
+                                    <span class="md-tag">产品管理</span>
+                                </div>
+                                <a href="#" class="md-card-action">了解详情 <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="project-header">
-                                <div class="project-icon">
-                                    <i class="fas fa-route"></i>
-                                </div>
-                                <div class="project-meta">
-                                    <h3 class="project-title">智能物流调度系统</h3>
-                                    <span class="project-period">2022 - 2023</span>
-                                </div>
+                    <!-- 全球供应链数字化转型项目 -->
+                    <div class="md-col-4 md-col-tablet-6 md-col-mobile-12">
+                        <div class="md-card">
+                            <div class="md-card-media">
+                                <i class="fas fa-project-diagram"></i>
                             </div>
-                        
-                            <div class="project-description">
-                                <p>
-                                    设计并实施基于AI的智能物流调度系统，通过路径优化算法和实时调度，
-                                    显著提升配送效率，降低物流成本。系统采用先进的优化算法和实时数据处理技术，
-                                    为物流企业提供智能化的调度解决方案。
+                            <div class="md-card-content">
+                                <div class="md-card-meta">
+                                    <div class="md-card-date">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span>2022 - 2023</span>
+                                    </div>
+                                    <div class="md-card-category">数字化转型</div>
+                                    <div class="md-card-role">
+                                        <i class="fas fa-user-tie"></i>
+                                        <span>技术总监</span>
+                                    </div>
+                                    <div class="md-card-amount">
+                                        <i class="fas fa-yen-sign"></i>
+                                        <span>200万</span>
+                                    </div>
+                                </div>
+                                <h3 class="md-card-title">全球供应链数字化转型项目</h3>
+                                <p class="md-card-excerpt">
+                                    领导跨国企业供应链数字化转型项目，构建端到端数字供应链平台，
+                                    整合ERP、WMS、TMS等系统，实现供应链全流程可视化和自动化，
+                                    提升全球供应链协同效率和韧性。
                                 </p>
-                            </div>
-                        
-                            <div class="project-highlights">
-                                <div class="highlight-grid">
-                                    <div class="highlight-item">
-                                        <h4>核心功能</h4>
-                                        <ul>
-                                            <li>智能路径规划与优化算法</li>
-                                            <li>实时交通状况分析与动态调整</li>
-                                            <li>多约束条件下的车辆调度</li>
-                                            <li>配送员工作负载均衡</li>
-                                            <li>客户时间窗口智能匹配</li>
-                                        </ul>
-                                    </div>
-                                    
-                                    <div class="highlight-item">
-                                        <h4>主要成果</h4>
-                                        <ul>
-                                            <li>配送效率提升40%，运输成本降低25%</li>
-                                            <li>客户满意度提升至98%</li>
-                                            <li>系统覆盖全国200+城市</li>
-                                            <li>配送准时率达到95%以上</li>
-                                            <li>燃油消耗降低30%，减少碳排放</li>
-                                        </ul>
+                                <div class="md-card-highlights">
+                                    <div class="md-highlight-grid">
+                                        <div class="md-highlight-item">
+                                            <h4>核心功能</h4>
+                                            <ul>
+                                                <li>全球供应链控制塔系统</li>
+                                                <li>多系统集成与数据互通</li>
+                                                <li>供应链流程自动化</li>
+                                                <li>实时绩效监控与分析</li>
+                                                <li>供应链风险预警系统</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="md-highlight-item">
+                                            <h4>主要成果</h4>
+                                            <ul>
+                                                <li>订单履行周期缩短40%</li>
+                                                <li>供应链可视化率提升至95%</li>
+                                                <li>运营成本降低30%</li>
+                                                <li>系统响应时间减少60%</li>
+                                                <li>全球库存优化节省20%成本</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        
-                            <div class="project-tags">
-                                <span class="tag">智能物流</span>
-                                <span class="tag">路径优化</span>
-                                <span class="tag">实时调度</span>
-                                <span class="tag">产品策略</span>
+                                <div class="md-card-tags">
+                                    <span class="md-tag">数字化转型</span>
+                                    <span class="md-tag">系统集成</span>
+                                    <span class="md-tag">流程优化</span>
+                                    <span class="md-tag">全球供应链</span>
+                                </div>
+                                <a href="#" class="md-card-action">了解详情 <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="project-header">
-                                <div class="project-icon">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
-                                <div class="project-meta">
-                                    <h3 class="project-title">供应商风险管理系统</h3>
-                                    <span class="project-period">2021 - 2022</span>
-                                </div>
+                    <!-- 智能仓储机器人系统 -->
+                    <div class="md-col-4 md-col-tablet-6 md-col-mobile-12">
+                        <div class="md-card">
+                            <div class="md-card-media">
+                                <i class="fas fa-robot"></i>
                             </div>
-                        
-                            <div class="project-description">
-                                <p>
-                                    构建基于大数据和机器学习的供应商风险评估与管理系统，
-                                    实现供应商全生命周期的智能化风险监控和预警。系统整合多维度数据源，
-                                    提供全面的风险评估和预警机制。
+                            <div class="md-card-content">
+                                <div class="md-card-meta">
+                                    <div class="md-card-date">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span>2021 - 2022</span>
+                                    </div>
+                                    <div class="md-card-category">技术创新</div>
+                                    <div class="md-card-role">
+                                        <i class="fas fa-user-tie"></i>
+                                        <span>研发主管</span>
+                                    </div>
+                                    <div class="md-card-amount">
+                                        <i class="fas fa-yen-sign"></i>
+                                        <span>150万</span>
+                                    </div>
+                                </div>
+                                <h3 class="md-card-title">智能仓储机器人系统</h3>
+                                <p class="md-card-excerpt">
+                                    设计并实施智能仓储机器人系统，结合计算机视觉和深度学习技术，
+                                    实现仓库内货物的自动识别、分拣和搬运，大幅提升仓储效率和准确率，
+                                    降低人力成本和操作风险。
                                 </p>
-                            </div>
-                        
-                            <div class="project-highlights">
-                                <div class="highlight-grid">
-                                    <div class="highlight-item">
-                                        <h4>核心功能</h4>
-                                        <ul>
-                                            <li>多维度供应商风险评估模型</li>
-                                            <li>实时风险监控与预警系统</li>
-                                            <li>供应商绩效分析与评级</li>
-                                            <li>风险事件自动识别与分类</li>
-                                            <li>应急响应方案智能推荐</li>
-                                        </ul>
-                                    </div>
-                                    
-                                    <div class="highlight-item">
-                                        <h4>主要成果</h4>
-                                        <ul>
-                                            <li>风险识别准确率达到88%</li>
-                                            <li>供应中断事件减少70%</li>
-                                            <li>建立完整的供应商评估体系</li>
-                                            <li>风险预警提前期平均30天</li>
-                                            <li>供应商管理效率提升45%</li>
-                                        </ul>
+                                <div class="md-card-highlights">
+                                    <div class="md-highlight-grid">
+                                        <div class="md-highlight-item">
+                                            <h4>核心功能</h4>
+                                            <ul>
+                                                <li>基于深度学习的货物识别系统</li>
+                                                <li>自主导航与路径规划</li>
+                                                <li>多机器人协同调度算法</li>
+                                                <li>实时任务分配与优化</li>
+                                                <li>机器人健康监控系统</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="md-highlight-item">
+                                            <h4>主要成果</h4>
+                                            <ul>
+                                                <li>仓储效率提升200%</li>
+                                                <li>拣货准确率达到99.8%</li>
+                                                <li>人力成本降低65%</li>
+                                                <li>仓库空间利用率提升40%</li>
+                                                <li>24/7全天候运营能力</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        
-                            <div class="project-tags">
-                                <span class="tag">风险管理</span>
-                                <span class="tag">供应商评估</span>
-                                <span class="tag">数据分析</span>
-                                <span class="tag">产品规划</span>
+                                <div class="md-card-tags">
+                                    <span class="md-tag">机器人技术</span>
+                                    <span class="md-tag">计算机视觉</span>
+                                    <span class="md-tag">智能仓储</span>
+                                    <span class="md-tag">自动化</span>
+                                </div>
+                                <a href="#" class="md-card-action">了解详情 <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- 智能物流配送优化系统 -->
+                    <div class="md-col-4 md-col-tablet-6 md-col-mobile-12">
+                        <div class="md-card">
+                            <div class="md-card-media">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <div class="md-card-content">
+                                <div class="md-card-meta">
+                                    <div class="md-card-date">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span>2020 - 2021</span>
+                                    </div>
+                                    <div class="md-card-category">智能物流</div>
+                                    <div class="md-card-role">
+                                        <i class="fas fa-user-tie"></i>
+                                        <span>算法专家</span>
+                                    </div>
+                                    <div class="md-card-amount">
+                                        <i class="fas fa-yen-sign"></i>
+                                        <span>120万</span>
+                                    </div>
+                                </div>
+                                <h3 class="md-card-title">智能物流配送优化系统</h3>
+                                <p class="md-card-excerpt">
+                                    开发基于AI的智能物流配送优化系统，利用机器学习和运筹学算法，
+                                    实现配送路径智能规划、车辆动态调度和实时交通预测，显著提升
+                                    物流配送效率和客户满意度。
+                                </p>
+                                <div class="md-card-highlights">
+                                    <div class="md-highlight-grid">
+                                        <div class="md-highlight-item">
+                                            <h4>核心功能</h4>
+                                            <ul>
+                                                <li>智能路径规划与优化</li>
+                                                <li>实时交通状况预测</li>
+                                                <li>车辆动态调度系统</li>
+                                                <li>配送时间窗口管理</li>
+                                                <li>多目标优化算法</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="md-highlight-item">
+                                            <h4>主要成果</h4>
+                                            <ul>
+                                                <li>配送效率提升45%</li>
+                                                <li>燃油消耗降低30%</li>
+                                                <li>准时交付率提升至98%</li>
+                                                <li>车辆利用率提高50%</li>
+                                                <li>客户满意度提升40%</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="md-card-tags">
+                                    <span class="md-tag">智能物流</span>
+                                    <span class="md-tag">路径优化</span>
+                                    <span class="md-tag">机器学习</span>
+                                    <span class="md-tag">配送管理</span>
+                                </div>
+                                <a href="#" class="md-card-action">了解详情 <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 可持续供应链碳足迹管理平台 -->
+                    <div class="md-col-4 md-col-tablet-6 md-col-mobile-12">
+                        <div class="md-card">
+                            <div class="md-card-media">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div class="md-card-content">
+                                <div class="md-card-meta">
+                                    <div class="md-card-date">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span>2019 - 2020</span>
+                                    </div>
+                                    <div class="md-card-category">WMS</div>
+                                    <div class="md-card-role">
+                                        <i class="fas fa-user-tie"></i>
+                                        <span>WMS顾问</span>
+                                    </div>
+                                    <div class="md-card-amount">
+                                        <i class="fas fa-yen-sign"></i>
+                                        <span>180万</span>
+                                    </div>
+                                </div>
+                                <h3 class="md-card-title">可持续供应链碳足迹管理平台</h3>
+                                <p class="md-card-excerpt">
+                                    设计并实施可持续供应链碳足迹管理平台，通过数据分析和可视化技术，
+                                    帮助企业追踪、分析和优化供应链各环节的碳排放，支持企业实现
+                                    碳中和目标和ESG责任。
+                                </p>
+                                <div class="md-card-highlights">
+                                    <div class="md-highlight-grid">
+                                        <div class="md-highlight-item">
+                                            <h4>核心功能</h4>
+                                            <ul>
+                                                <li>全链路碳排放追踪系统</li>
+                                                <li>供应商碳足迹评估</li>
+                                                <li>碳减排方案智能推荐</li>
+                                                <li>碳排放预测与模拟</li>
+                                                <li>ESG报告自动生成</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="md-highlight-item">
+                                            <h4>主要成果</h4>
+                                            <ul>
+                                                <li>供应链碳排放降低25%</li>
+                                                <li>可持续材料使用率提升40%</li>
+                                                <li>ESG评级提升两个等级</li>
+                                                <li>能源使用效率提高35%</li>
+                                                <li>品牌可持续形象显著提升</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="md-card-tags">
+                                    <span class="md-tag">可持续发展</span>
+                                    <span class="md-tag">碳足迹</span>
+                                    <span class="md-tag">ESG</span>
+                                    <span class="md-tag">绿色供应链</span>
+                                </div>
+                                <a href="#" class="md-card-action">了解详情 <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
-
     </main>
 
     <!-- Footer -->
@@ -289,5 +442,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <!-- 移除了筛选功能相关的JavaScript代码 -->
 </body>
 </html>

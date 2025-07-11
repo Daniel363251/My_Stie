@@ -143,18 +143,29 @@ function initializeNavigation() {
      });
 }
 
-// 文章筛选功能
+// 文章和项目筛选功能
 function initializeArticleFilter() {
-    filterBtns.forEach(btn => {
+    const allFilterBtns = document.querySelectorAll('.filter-btn');
+    const allCards = document.querySelectorAll('.article-card, .project-card');
+    
+    allFilterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
+            // 获取当前筛选组的所有按钮
+            const filterGroup = btn.closest('.articles-filter').querySelectorAll('.filter-btn');
+            
             // 更新按钮状态
-            filterBtns.forEach(b => b.classList.remove('active'));
+            filterGroup.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             
             const filter = btn.getAttribute('data-filter');
             
-            // 筛选文章
-            articleCards.forEach(card => {
+            // 确定要筛选的卡片集合（文章页面或项目页面）
+            const cardsToFilter = btn.closest('.articles-filter').classList.contains('projects-filter') ?
+                document.querySelectorAll('.project-card') : 
+                document.querySelectorAll('.article-card');
+            
+            // 筛选卡片
+            cardsToFilter.forEach(card => {
                 const category = card.getAttribute('data-category');
                 
                 if (filter === 'all' || category === filter) {

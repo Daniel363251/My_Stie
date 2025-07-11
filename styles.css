@@ -9,12 +9,14 @@
 :root {
     /* Material Design 主题色彩 */
     --primary-color: #1976d2;
+    --primary-color-rgb: 25, 118, 210; /* 添加RGB格式的primary-color变量 */
     --primary-variant: #1565c0;
     --secondary-color: #03dac6;
     --secondary-variant: #018786;
     --accent-color: #ff4081;
     --background-color: #fafafa;
     --surface-color: #ffffff;
+    --surface-color-rgb: 255, 255, 255; /* 添加RGB格式的surface-color变量 */
     --surface-variant: #f5f5f5;
     --text-primary: #212121;
     --text-secondary: #757575;
@@ -37,6 +39,17 @@
     --gradient-primary: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
     --gradient-secondary: linear-gradient(135deg, #03dac6 0%, #018786 100%);
     --gradient-accent: linear-gradient(135deg, #ff4081 0%, #e91e63 100%);
+    
+    /* 页面特定渐变色 - 便于查找和修改 
+     * About页面渐变色: --gradient-about (蓝色到青色)
+     * Experience页面渐变色: --gradient-experience (绿色渐变)
+     * Articles页面渐变色: --gradient-articles (蓝色到青色)
+     * Contact页面渐变色: --gradient-contact (蓝色到青色)
+     */
+    --gradient-about: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --gradient-experience: linear-gradient(135deg, #00E0EE, #AD00FE);
+    --gradient-articles: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --gradient-contact: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     
     /* Avatar 相关变量 */
     --avatar-size: 300px;
@@ -829,7 +842,7 @@ html {
     gap: 2rem;
 }
 
-.article-card {
+.article-card, .project-card {
     background-color: var(--background-color);
     border-radius: 12px;
     overflow: hidden;
@@ -837,7 +850,7 @@ html {
     transition: all 0.3s ease;
 }
 
-.article-card:hover {
+.article-card:hover, .project-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-large);
 }
@@ -1400,8 +1413,9 @@ html {
 }
 
 /* About Page Styles */
+/* 使用 --gradient-about 变量定义渐变背景 */
 .about-hero {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--gradient-about);
     color: white;
     padding: 120px 0 80px;
     text-align: center;
@@ -1541,8 +1555,9 @@ html {
 }
 
 /* Experience Page Styles */
+/* 使用 --gradient-experience 变量定义渐变背景 */
 .experience-hero {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--gradient-experience);
     color: white;
     padding: 120px 0 80px;
     text-align: center;
@@ -1636,14 +1651,14 @@ html {
 .timeline-content {
         background: var(--surface-color);
         padding: 2.5rem;
-        border-radius: 16px;
-        border: 1px solid var(--border-color);
+        border-radius: 24px; /* Material Design 3.0 更大的圆角 */
+        border: none; /* 移除边框，使用阴影代替 */
         position: relative;
         box-shadow: var(--elevation-2);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); /* Material Design的标准过渡曲线 */
         overflow: hidden;
         width: 100%;
-        max-width: 1400px;
+        max-width: 1800px;
     }
 
 .timeline-content::before {
@@ -1656,18 +1671,25 @@ html {
     background: var(--gradient-primary);
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); /* 统一过渡时间 */
+    opacity: 0.9; /* 轻微降低不透明度 */
 }
 
 .timeline-content:hover::before {
     transform: scaleX(1);
 }
 
+.timeline-content:active {
+    transform: translateY(-2px); /* 点击时轻微上移 */
+    box-shadow: var(--elevation-2); /* 点击时减小阴影 */
+}
+
 
 
 .timeline-content:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--elevation-4);
+    transform: translateY(-4px); /* 减小上移距离，更符合Material Design的微妙动效 */
+    box-shadow: var(--elevation-3); /* 使用适中的阴影层级 */
+    background-color: rgba(var(--surface-color-rgb), 0.98); /* 轻微改变背景色 */
 }
 
 
@@ -1680,15 +1702,21 @@ html {
 }
 
 .project-icon {
-    width: 60px;
-    height: 60px;
+    width: 56px; /* Material Design推荐的图标尺寸 */
+    height: 56px;
     background: var(--gradient-primary);
-    border-radius: 12px;
+    border-radius: 16px; /* 更大的圆角 */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
     box-shadow: var(--elevation-1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* 添加过渡效果 */
+}
+
+.project-icon:hover {
+    transform: scale(1.05); /* 轻微放大效果 */
+    box-shadow: var(--elevation-2);
 }
 
 .project-icon i {
@@ -1703,19 +1731,38 @@ html {
 .project-title {
     color: var(--text-primary);
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 500; /* Material Design推荐使用500作为标题权重 */
     margin: 0 0 0.5rem 0;
     line-height: 1.3;
+    letter-spacing: -0.01em; /* 轻微的字母间距调整 */
 }
 
 .project-period {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
+    color: var(--primary-color); /* 使用主色调 */
+    font-size: 0.85rem;
     font-weight: 500;
-    background: var(--surface-variant);
+    background: rgba(var(--primary-color-rgb, 25, 118, 210), 0.08); /* 半透明背景 */
     padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    display: inline-block;
+    border-radius: 16px; /* Material Design 3.0的芯片圆角 */
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba(var(--primary-color-rgb, 25, 118, 210), 0.12); /* 添加细微边框 */
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-period::before {
+    content: '\f017'; /* 时钟图标 */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.project-period:hover {
+    background: rgba(var(--primary-color-rgb, 25, 118, 210), 0.12); /* 悬停时背景色加深 */
+    transform: translateY(-1px);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1); /* 添加轻微阴影 */
 }
 
 .project-description {
@@ -1724,9 +1771,11 @@ html {
 
 .project-description p {
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: 1.6; /* Material Design推荐的行高 */
     font-size: 1rem;
     margin: 0;
+    font-weight: 400; /* 正文推荐权重 */
+    letter-spacing: 0.01em; /* 轻微增加字母间距提高可读性 */
 }
 
 .project-highlights {
@@ -1742,19 +1791,35 @@ html {
 .highlight-item h4 {
     color: var(--primary-color);
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 500; /* Material Design推荐的标题权重 */
     margin: 0 0 1rem 0;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    letter-spacing: -0.01em; /* 轻微的字母间距调整 */
+    padding: 0.5rem 0; /* 增加上下内边距 */
+    position: relative; /* 为底部边框做准备 */
+}
+
+.highlight-item h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--primary-color);
+    border-radius: 1px;
+    opacity: 0.7;
 }
 
 .highlight-item h4::before {
     content: '';
     width: 4px;
-    height: 20px;
+    height: 24px;
     background: var(--primary-color);
-    border-radius: 2px;
+    border-radius: 4px; /* 更圆润的边角 */
+    margin-right: 8px; /* 增加间距 */
 }
 
 .highlight-item ul {
@@ -1765,20 +1830,27 @@ html {
 
 .highlight-item li {
     position: relative;
-    padding-left: 1.5rem;
+    padding-left: 1.75rem; /* 增加左侧内边距 */
     margin-bottom: 0.75rem;
     color: var(--text-secondary);
     line-height: 1.5;
     font-size: 0.95rem;
+    transition: transform 0.2s ease; /* 添加过渡效果 */
+}
+
+.highlight-item li:hover {
+    transform: translateX(2px); /* 悬停时轻微右移 */
 }
 
 .highlight-item li::before {
-    content: '•';
+    content: '';
     position: absolute;
     left: 0;
-    color: var(--primary-color);
-    font-weight: bold;
-    font-size: 1.2rem;
+    top: 0.5rem; /* 垂直居中对齐 */
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color);
+    border-radius: 50%; /* 圆形标记 */
 }
 
 .project-tags {
@@ -1788,18 +1860,20 @@ html {
 }
 
 .project-tags .tag {
-    background: var(--primary-color);
-    color: white;
+    background: rgba(25, 118, 210, 0.12); /* 半透明背景，更符合Material Design芯片设计 */
+    color: var(--primary-color); /* 使用主色调作为文字颜色 */
     padding: 0.5rem 1rem;
-    border-radius: 20px;
+    border-radius: 8px; /* Material Design 3.0的芯片圆角 */
     font-size: 0.85rem;
     font-weight: 500;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(25, 118, 210, 0.2); /* 添加细微边框 */
 }
 
 .project-tags .tag:hover {
-    background: var(--primary-variant);
+    background: rgba(25, 118, 210, 0.18); /* 悬停时背景色加深 */
     transform: translateY(-1px);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1); /* 添加轻微阴影 */
 }
 
 /* Responsive Design for Timeline */
@@ -1867,14 +1941,15 @@ html {
 
 
 /* Articles Page Styles */
+/* 使用 --gradient-articles 变量定义渐变背景 */
 .articles-hero {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--gradient-articles);
     color: white;
     padding: 120px 0 80px;
     text-align: center;
 }
 
-.filter-tabs {
+.filter-tabs, .articles-filter {
     display: flex;
     justify-content: center;
     gap: 1rem;
@@ -1882,7 +1957,7 @@ html {
     flex-wrap: wrap;
 }
 
-.filter-tab {
+.filter-tab, .filter-btn {
     padding: 0.8rem 1.5rem;
     background: transparent;
     border: 2px solid var(--border-color);
@@ -1893,21 +1968,21 @@ html {
     font-weight: 500;
 }
 
-.filter-tab.active,
-.filter-tab:hover {
+.filter-tab.active, .filter-btn.active,
+.filter-tab:hover, .filter-btn:hover {
     background: var(--primary-color);
     border-color: var(--primary-color);
     color: white;
 }
 
-.articles-grid {
+.articles-grid, .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     margin: 3rem 0;
 }
 
-.article-card {
+.article-card, .project-card {
     background: var(--card-bg);
     border-radius: 12px;
     border: 1px solid var(--border-color);
@@ -1916,7 +1991,7 @@ html {
     height: fit-content;
 }
 
-.article-card:hover {
+.article-card:hover, .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
@@ -1990,11 +2065,33 @@ html {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    transition: all 0.3s ease;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); /* Material Design的标准过渡曲线 */
+    padding: 0.5rem 0.75rem; /* 增加内边距 */
+    border-radius: 8px; /* 添加圆角 */
+    position: relative;
+    overflow: hidden;
+}
+
+.read-more::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: currentColor;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    border-radius: 8px;
 }
 
 .read-more:hover {
     gap: 0.8rem;
+    background-color: rgba(25, 118, 210, 0.08); /* 悬停时添加轻微背景色 */
+}
+
+.read-more:active::after {
+    opacity: 0.12; /* 点击时的涟漪效果 */
 }
 
 .pagination {
@@ -2066,8 +2163,9 @@ html {
 }
 
 /* Contact Page Styles */
+/* 使用 --gradient-contact 变量定义渐变背景 */
 .contact-hero {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--gradient-contact);
     color: white;
     padding: 120px 0 80px;
     text-align: center;
