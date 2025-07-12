@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WMS产品经理激荡三十年 - Ziyan's Space</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- 阅读进度指示器样式 -->
+    <style id="progress-bar-styles">
+        #progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: transparent;
+            z-index: 10000;
+        }
+        #progress-bar {
+            height: 100%;
+            width: 0;
+            background-color: #ff4081;
+            box-shadow: 0 0 10px rgba(255, 64, 129, 0.7);
+            transition: width 0.2s;
+        }
+    </style>
+    <style>
+        /* 文章详情页特定样式 */
+        .article-detail-container {
+            max-width: 1000px; /* 增加最大宽度，从800px扩展到1000px */
+            margin: 0 auto;
+            padding: 2rem 2rem; /* 增加内边距，提供更好的阅读体验 */
+            position: relative;
+        }
+        
+        .article-detail-header {
+            margin-bottom: 2rem;
+        }
+        
+        .article-detail-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .article-detail-date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .article-detail-category {
+            background-color: rgba(var(--primary-color-rgb), 0.1);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            transition: background-color 0.2s ease;
+        }
+        
+        .article-detail-title {
+            font-size: 2.5rem;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            font-weight: 700;
+            word-wrap: break-word; /* 确保长标题能够正确换行 */
+            hyphens: auto; /* 允许在必要时使用连字符 */
+            max-width: 100%; /* 确保标题不会溢出容器 */
+        }
+        
+        .article-detail-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .article-detail-tag {
+            background-color: var(--surface-variant);
+            color: var(--text-secondary);
+            padding: 0.35rem 0.85rem;
+            border-radius: 16px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            transition: all 0.2s ease;
+        }
+        
+        .article-detail-tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(var(--primary-color-rgb), 0.3);
+        }
+        
+        /* 旧的阅读进度指示器样式已移除 */
+        
+        /* 引言区域 */
+        .article-intro {
+            background: linear-gradient(135deg, rgba(var(--primary-color-rgb), 0.05) 0%, rgba(var(--primary-color-rgb), 0.1) 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 2rem;
+            font-style: italic;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .article-intro::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-size: 8rem;
+            color: rgba(var(--primary-color-rgb), 0.1);
+            font-family: Georgia, serif;
+        }
+        
+        /* 高亮块 */
+        .highlight-block {
+            background: linear-gradient(to right, rgba(var(--primary-color-rgb), 0.05), rgba(var(--primary-color-rgb), 0.02));
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .highlight-block::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: var(--primary-color);
+        }
+        
+        /* 引用样式 */
+        .quote-block {
+            font-style: italic;
+            padding: 1rem 1.5rem;
+            position: relative;
+            margin: 1.5rem 0;
+            background-color: var(--surface-variant);
+            border-radius: 8px;
+        }
+        
+        .quote-block::before {
+            content: '"';
+            font-size: 3rem;
+            position: absolute;
+            left: -10px;
+            top: -20px;
+            color: rgba(var(--primary-color-rgb), 0.2);
+            font-family: Georgia, serif;
+        }
+        
+        /* 分隔线 */
+        .article-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--border-color), transparent);
+            margin: 2.5rem 0;
+            position: relative;
+        }
+        
+        .article-divider::before {
+            content: '✦';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--surface);
+            padding: 0 1rem;
+            color: var(--primary-color);
+            font-size: 0.8rem;
+        }
+        
+        /* 标题图标 */
+        .article-detail-content h1 {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem; /* 字号缩小50%，从2rem减小到1rem */
+            margin: 2.5rem 0 1.5rem;
+            color: var(--text-primary);
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .article-detail-content h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 3px;
+        }
+        
+        .article-detail-content {
+            line-height: 1.8;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            max-width: 100%;
+            /* 优化宽屏阅读体验 */
+            text-align: justify; /* 两端对齐，提高可读性 */
+            text-justify: inter-word; /* 单词间调整 */
+            letter-spacing: 0.01em; /* 轻微增加字间距 */
+        }
+        
+        /* 宽屏优化样式已移除 */
+        
+        /* 布局切换按钮样式已移除 */
+        
+        .article-detail-content h1 {
+            font-size: 1.5rem; /* 字号缩小50%，从2rem减小到1rem */
+            margin: 2rem 0 1rem;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+        
+        .article-detail-content h2 {
+            font-size: 1.75rem;
+            margin: 1.75rem 0 1rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .article-detail-content h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            bottom: 0.5rem;
+            width: 3px;
+            background: var(--primary-variant);
+            border-radius: 3px;
+        }
+        
+        .article-detail-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-detail-content strong {
+            font-weight: 600;
+            color: var(--primary-color);
+            padding: 0.1rem 0.3rem;
+            background-color: rgba(var(--primary-color-rgb), 0.08);
+            border-radius: 3px;
+        }
+        
+        /* 关键词高亮 */
+        .keyword-highlight {
+            background: linear-gradient(to bottom, transparent 50%, rgba(var(--primary-color-rgb), 0.2) 50%);
+            padding: 0 0.2rem;
+        }
+        
+        .article-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .article-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+        
+        .article-nav-link:hover {
+            color: var(--primary-variant);
+            transform: translateX(-5px);
+        }
+        
+        .article-nav-link.next:hover {
+            transform: translateX(5px);
+        }
+        
+        .back-to-articles {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .back-to-articles:hover {
+            color: var(--primary-color);
+        }
+        
+        /* 响应式调整 */
+        @media (min-width: 1200px) {
+            .article-detail-container {
+                max-width: 1200px; /* 在大屏幕上进一步增加宽度 */
+            }
+            
+            .article-detail-content {
+                font-size: 1.15rem; /* 在大屏幕上稍微增加字体大小 */
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .article-detail-container {
+                padding: 1.5rem 1.5rem;
+            }
+            
+            .article-detail-title {
+                font-size: 2rem;
+            }
+            
+            .article-detail-content {
+                font-size: 1rem;
+            }
+            
+            .article-detail-content h1 {
+                font-size: 0.875rem; /* 字号缩小50%，从1.75rem减小到0.875rem */
+            }
+            
+            .article-detail-content h2 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .article-detail-container {
+                padding: 1.2rem 1rem;
+            }
+            
+            .article-detail-title {
+                font-size: 1.75rem;
+            }
+            
+            .article-detail-meta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .article-navigation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .highlight-block {
+                padding: 1.2rem;
+                margin: 1.5rem 0;
+            }
+            
+            .article-intro {
+                padding: 1.2rem;
+            }
+        }
+        
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .article-detail-content p {
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .article-detail-content p:nth-child(1) { animation-delay: 0.1s; }
+        .article-detail-content p:nth-child(2) { animation-delay: 0.2s; }
+        .article-detail-content p:nth-child(3) { animation-delay: 0.3s; }
+        .article-detail-content p:nth-child(4) { animation-delay: 0.4s; }
+        .article-detail-content p:nth-child(5) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <!-- 新的阅读进度指示器 -->
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+    
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Ziyan's Space</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                     <a href="../index.html" class="nav-link">Homepage</a>
+                 </li>
+                <li class="nav-item">
+                    <a href="../about.html" class="nav-link">About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../experience.html" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../articles.html" class="nav-link active">Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-controls">
+                <div class="theme-toggle">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </div>
+                <div class="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="article-detail-section section">
+            <div class="article-detail-container">
+                <a href="../articles.html" class="back-to-articles">
+                    <i class="fas fa-arrow-left"></i> 返回文章列表
+                </a>
+                
+                <article class="article-detail">
+                    <header class="article-detail-header">
+                        <div class="article-detail-meta">
+                            <span class="article-detail-date">2025-07-13</span>
+                            <span class="article-detail-category">个人感悟</span>
+                        </div>
+                        <h1 class="article-detail-title">WMS产品经理激荡三十年</h1>
+                        <div class="article-detail-tags">
+                            <span class="article-detail-tag">WMS</span>
+                            <span class="article-detail-tag">产品经理</span>
+                            <span class="article-detail-tag">数字化交付</span>
+                        </div>
+                    </header>
+                    
+                    <div class="article-detail-content">
+                        <div class="article-intro">
+                            <p>写在28岁之际 —— 从西北到东部，从学生到产品经理，我的人生就像一个"未上线的版本"，一直在更新，一直在热更，还一直没有稳定版本号。</p>
+                        </div>
+                        
+                        <p>1997年，我出生在甘肃兰州，一个<span class="keyword-highlight">牛肉面比PPT还筋道</span>的地方。</p>
+                        <p>童年KPI是"谁先抢到电视遥控器"，成年后的KPI变成了"客户能不能在下周上线"。</p>
+                        
+                        <div class="article-divider"></div>
+                        
+                        <h1><i class="fas fa-file-alt" style="margin-right: 10px; color: var(--primary-color);"></i>【你以为我只是个写文档的，其实我是新时代搬砖侠】</h1>
+                        
+                        <p>2015年，我还在写作业。没人知道，10年后，我会每天写另一本"作业"——PRD。区别是，老师以前只打"优良中差"，现在老板一句"你这逻辑不行"，我直接在会议室<span class="keyword-highlight">社死三次</span>。</p>
+                        
+                        <div class="highlight-block">
+                            <p>曾经我以为仓库是个"堆东西的地方"，后来才发现：</p>
+                            <p>它是个能让人疯掉的宇宙黑洞。</p>
+                            <p>上一个进去调研的人，已经在托盘上坐了三小时没走出来。</p>
+                        </div>
+                        
+                        <div class="article-divider"></div>
+                        
+                        <h1><i class="fas fa-warehouse" style="margin-right: 10px; color: var(--primary-color);"></i>【WMS不是仓库管理系统，是我的第二人格】</h1>
+                        
+                        <p>加入菜鸟之后，我做WMS系统商业化交付。</p>
+                        
+                        <p>别人跑去北上广卷投行、卷大厂C端，我却一步步走进<span class="keyword-highlight">仓库、堆场、码头、ERP和API</span>组成的世界</p>
+                        
+                        <div class="quote-block">
+                            <p>商业化交付，听起来很高大上，实际上是：</p>
+                            <p>"三天两头出差 + 五天两头开会 + 全天候被需求支配"</p>
+                        </div>
+                        
+                        <p>每次客户给我提需求都像说段子：</p>
+                        <p><strong>"你们能不能像淘宝一样，点一下就能发货？"</strong></p>
+                        <p><strong>"有没有一键自动理货的功能？不用扫码的那种。"</strong></p>
+                        <p><strong>"我们系统只要一个入口，能下单、入库、出库、清关、收款、直播带货就行。"</strong></p>
+                        
+                        <p>我说：可以啊，你这是需要个系统？你这是需要个<span class="keyword-highlight">马云</span>。</p>
+                        
+                        <div class="article-divider"></div>
+                        
+                        <h1><i class="fas fa-globe-asia" style="margin-right: 10px; color: var(--primary-color);"></i>【在马来西亚的堆场里，我是唯一一个懂系统的人，除了保安】</h1>
+                        
+                        <p>第一次出海，我信心满满。后来发现，唯一让我"上线"的，是<span class="keyword-highlight">防晒霜</span>。</p>
+                        
+                        <div class="highlight-block">
+                            <p>别人出国拍照打卡，我出国是去和叉车谈心的。</p>
+                            
+                            <p>全球出差像开盲盒：</p>
+                            <p>有的客户现场用的是笔，有的用的是表格，最先进的那个——用了"拍照+群聊"，形成一整套类系统生态：</p>
+                            <p>"流程靠吼、状态靠猜、库存靠记仇"</p>
+                        </div>
+                        
+                        <p>我在某国调研完仓库出来，队友问我一句："你怎么看？"</p>
+                        <p>我说："这个仓库，除了地是平的，其他都需要上线。"</p>
+                        
+                        <p>仓库没条码、堆场全靠Excel、司机喊一嗓子代替流程流转——</p>
+                        
+                        <div class="quote-block">
+                            <p>客户说："Can your system link with our driver's WhatsApp?"</p>
+                            <p>我差点就说："Can your forklift link with my tears?"</p>
+                        </div>
+                        
+                        <p>我学会了用中英混搭讲产品，学会了对着堆满灰尘的白板画架构图，</p>
+                        <p>也学会了在客户沉默三秒后，迅速切回"让我们再看一个方案"模式。</p>
+                        
+                        <p>我开始明白：仓库不是只装货，它还装着每一家公司对<span class="keyword-highlight">秩序的渴望</span>。</p>
+                        
+                        <p>我站在热浪中思考人生：这真是人类的物流现场吗，还是《流浪地球》的仓储外传？</p>
+                        
+                        <div class="article-divider"></div>
+                        
+                        <h1><i class="fas fa-random" style="margin-right: 10px; color: var(--primary-color);"></i>【我不叫产品经理，我叫"万能接口人"】</h1>
+                        
+                        <p>在菜鸟做数字化系统交付之后，我的角色发生了本质变化。</p>
+                        <p>我不是在"打交付仗"，我是在<span class="keyword-highlight">斡旋四方、周旋八面</span>。</p>
+                        
+                        <div class="highlight-block">
+                            <p>对开发：我说"别急，我来解释业务"；</p>
+                            <p>对业务：我说"别急，我来写逻辑"；</p>
+                            <p>对客户：我说"你放心，什么都能配"；</p>
+                            <p>对自己：我说"加班也别忘记点杯冰美式"。</p>
+                        </div>
+                        
+                        <p>每次蓝图评审，我都在心里默默问自己一句：<strong>"我们这是在做系统，还是在做善事？"</strong></p>
+                        
+                        <div class="article-divider"></div>
+                        
+                        <h1><i class="fas fa-drafting-compass" style="margin-right: 10px; color: var(--primary-color);"></i>【我写的每一份蓝图，都是和现实妥协过的理想主义】</h1>
+                        
+                        <p>我不怕写文档，我怕客户说："你写的我们看不懂，能不能就先上线？"</p>
+                        
+                        <div class="quote-block">
+                            <p>你想用模块化控制规则，他说"你们有没有那种'不点按钮也能过流程'的设计？"</p>
+                            <p>你说要先走现状流程，他说："我们的流程都是灵活走的，写不出来。"</p>
+                            <p>你说要冻结方案，他说："先冻一部分，其他边上边看。"</p>
+                        </div>
+                        
+                        <p>我无数次修改版本，编号从v1.0改到<span class="keyword-highlight">v26.3</span>，每一次都告诉自己：</p>
+                        
+                        <div class="highlight-block">
+                            <p>"这不是推翻，是演进；这不是妥协，是适配；这不是客户耍赖，是他们也很痛苦。"</p>
+                        </div>
+                        
+                        <p>产品经理和系统一起成长，但更重要的是，在一次次流程图被打碎重构中，我也在练成一个更懂组织逻辑的人。</p>
+                        
+                        <div class="article-divider"></div>
+                        
+                        <h1><i class="fas fa-road" style="margin-right: 10px; color: var(--primary-color);"></i>【这不是激荡三十年，这是我在一套套系统里，寻找长期主义的过程】</h1>
+                        
+                        <div class="highlight-block">
+                            <p>我没创业，也没融资，但我做过几十个仓库的系统上线；</p>
+                            <p>我没写畅销书，也没上热搜，但我让中国的系统在多个国家顺利跑起来。</p>
+                            
+                            <p>我不会写代码，但我能设计出让研发少写代码的参数；</p>
+                            <p>我不在做"0到1"的产品，而是在做<span class="keyword-highlight">"1到N"的标准化胜利</span>。</p>
+                        </div>
+                        
+                        <p>我是1997年出生的甘肃人，</p>
+                        <p>现在在杭州，在菜鸟，做着全球供应链数字化系统的商业化交付。</p>
+                        
+                        <div class="quote-block">
+                            <p>我的职业目标不是做下一个商业化软件独角兽，而是——让每一个系统上线时，不再靠奇迹，而是靠设计与理解。</p>
+                        </div>
+                    </div>
+                </article>
+                
+                <div class="article-navigation">
+                    <a href="#" class="article-nav-link prev">
+                        <i class="fas fa-arrow-left"></i> 上一篇文章
+                    </a>
+                    <a href="#" class="article-nav-link next">
+                        下一篇文章 <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 布局切换按钮已移除 -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">关于我</h4>
+                    <p class="footer-text">
+                        专注于AI与供应链结合的产品经理，致力于推动供应链数字化转型，
+                        擅长将复杂的AI算法转化为实用的商业解决方案。
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">快速链接</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">关于我</a></li>
+                        <li><a href="experience.html">经验</a></li>
+                        <li><a href="articles.html">文章</a></li>
+                        <li><a href="contact.html">联系</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">社交媒体</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ziyan's Space. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        // 立即执行阅读进度指示器初始化
+        (function() {
+            // 获取进度条元素
+            const progressBar = document.getElementById('progress-bar');
+            
+            // 更新进度条函数
+            function updateProgressBar() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+                const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+                const clientHeight = document.documentElement.clientHeight || window.innerHeight;
+                const scrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
+                
+                // 设置进度条宽度
+                progressBar.style.width = scrollPercentage + '%';
+            }
+            
+            // 初始化进度条
+            updateProgressBar();
+            
+            // 监听滚动事件
+            window.addEventListener('scroll', updateProgressBar);
+            window.addEventListener('resize', updateProgressBar);
+            
+            // 确保在页面加载完成后更新一次
+            window.addEventListener('load', updateProgressBar);
+        })();
+        
+        // 布局切换功能已移除
+    </script>
+</body>
+</html>

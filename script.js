@@ -148,6 +148,28 @@ function initializeArticleFilter() {
     const allFilterBtns = document.querySelectorAll('.filter-btn');
     const allCards = document.querySelectorAll('.article-card, .project-card');
     
+    // 添加Material Design涟漪效果到卡片
+    allCards.forEach(card => {
+        card.addEventListener('mousedown', function(e) {
+            const ripple = document.createElement('div');
+            ripple.className = 'ripple-effect';
+            
+            // 设置涟漪效果的位置
+            const rect = card.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            ripple.style.width = ripple.style.height = `${size}px`;
+            ripple.style.left = `${e.clientX - rect.left - size/2}px`;
+            ripple.style.top = `${e.clientY - rect.top - size/2}px`;
+            
+            card.appendChild(ripple);
+            
+            // 动画结束后移除涟漪元素
+            ripple.addEventListener('animationend', () => {
+                ripple.remove();
+            });
+        });
+    });
+    
     allFilterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             // 获取当前筛选组的所有按钮
