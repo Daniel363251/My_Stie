@@ -109,6 +109,23 @@
   font-size: 3rem;
 }
 
+.md-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.md-card-media i {
+  position: relative;
+  z-index: 2;
+  /* 当有图片时可以隐藏图标 */
+  /* display: none; */
+}
+
 .md-card-content {
   padding: 24px;
   flex: 1;
@@ -262,6 +279,7 @@
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 16px;
+  align-items: flex-start; /* 确保所有行的标签顶部对齐 */
 }
 
 .md-tag {
@@ -273,11 +291,24 @@
   font-weight: 500;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(var(--primary-color-rgb, 25, 118, 210), 0.12);
+  height: auto; /* 确保高度自适应内容 */
+  box-sizing: border-box; /* 确保padding不会增加元素总大小 */
+  line-height: 1.2; /* 统一行高 */
 }
 
 .md-tag:hover {
   background-color: rgba(var(--primary-color-rgb, 25, 118, 210), 0.16);
   transform: translateY(-1px);
+  font-size: 0.75rem; /* 确保hover状态下字体大小不变 */
+}
+
+/* 确保在移动设备上标签大小一致 */
+@media (max-width: 768px) {
+  .md-tag {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    line-height: 1.2;
+  }
 }
 
 
@@ -406,4 +437,14 @@
   height: 4px;
   background-color: var(--primary-color, #1976d2);
   border-radius: 2px;
+}
+
+/* 数字渐变效果 */
+.md-highlight-number {
+  font-weight: bold;
+  background: linear-gradient(220.55deg, #9F25FF 0%, #FF7A00 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
