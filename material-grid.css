@@ -448,3 +448,77 @@
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
+
+/* Material Design 暗黑模式样式 */
+[data-theme="dark"] .md-card {
+  background-color: var(--surface-color, #1e1e1e);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .md-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .md-card-highlights {
+  background-color: var(--surface-variant, #2d2d2d);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .md-card-role {
+  background-color: var(--surface-variant, #2d2d2d);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--text-secondary, #b3b3b3);
+}
+
+[data-theme="dark"] .md-card-amount {
+  background-color: rgba(255, 193, 7, 0.15);
+  border-color: rgba(255, 193, 7, 0.4);
+  color: #ffb300;
+}
+
+[data-theme="dark"] .md-card-amount:hover {
+  background-color: rgba(255, 193, 7, 0.25);
+  color: #ffa000;
+}
+
+[data-theme="dark"] .md-tag {
+  background-color: rgba(144, 202, 249, 0.12);
+  color: var(--primary-color, #90caf9);
+  border-color: rgba(144, 202, 249, 0.2);
+}
+
+[data-theme="dark"] .md-tag:hover {
+  background-color: rgba(144, 202, 249, 0.2);
+  transform: translateY(-1px);
+}
+
+[data-theme="dark"] .md-filter-btn {
+  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--text-secondary, #b3b3b3);
+}
+
+[data-theme="dark"] .md-filter-btn.active,
+[data-theme="dark"] .md-filter-btn:hover {
+  background-color: var(--primary-color, #90caf9);
+  color: var(--background-color, #121212);
+  border-color: var(--primary-color, #90caf9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .md-card-media {
+  background: linear-gradient(135deg, var(--primary-color, #90caf9), var(--secondary-color, #80cbc4));
+}
+
+[data-theme="dark"] .md-highlight-item h4:before {
+  background-color: var(--primary-color, #90caf9);
+}
+
+[data-theme="dark"] .md-section-title h2:after {
+  background-color: var(--primary-color, #90caf9);
+}
+
+[data-theme="dark"] .md-card-action:after {
+  background: linear-gradient(90deg, var(--primary-color, #90caf9), var(--accent-color, #ff80ab));
+}
