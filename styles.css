@@ -1421,10 +1421,10 @@ html {
     background: var(--gradient-about);
     color: white;
     padding: 120px 0 80px;
-    text-align: center;
+    text-align: left;
 }
 
-.about-hero .hero-title {
+.about-title {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
@@ -1432,14 +1432,55 @@ html {
     letter-spacing: -0.02em;
 }
 
-.about-hero .hero-subtitle {
+.about-subtitle {
     font-size: 2rem;
     opacity: 0.9;
     max-width: 700px;
-    margin: 0 auto 2rem;
+    margin: 0 0 2rem;
     line-height: 1.4;
     font-weight: 500;
     letter-spacing: 0.01em;
+}
+
+.about-hero-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.about-text {
+    flex: 1;
+    text-align: left;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 媒体查询：在小屏幕上将左右布局改为上下布局 */
+@media (max-width: 768px) {
+    .about-hero-content {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    
+    .about-text, .about-image {
+        flex: none;
+        width: 100%;
+    }
+    
+    .about-hero {
+        text-align: center;
+    }
+    
+    .about-text {
+        text-align: center;
+    }
 }
 
 .about-description {
