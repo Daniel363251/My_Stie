@@ -20,9 +20,24 @@
   margin-right: calc(-1 * var(--grid-gutter) / 2);
 }
 
-/* 添加行间距 */
-.md-row > .md-col-4:nth-child(n+4) {
-  margin-top: var(--grid-gutter);
+/* 添加行间距 - 桌面端3列布局 */
+@media (min-width: 769px) {
+  .md-row > .md-col-4:nth-child(n+4) {
+    margin-top: var(--grid-gutter);
+  }
+}
+
+/* 手机端统一间距 */
+@media (max-width: 768px) {
+  .md-row > [class*="md-col-"]:not(:first-child) {
+    margin-top: var(--grid-gutter);
+  }
+  
+  /* 手机端移除卡片的margin-bottom，避免间距冲突 */
+  .md-card {
+    margin-bottom: 0;
+    height: auto; /* 手机端让卡片根据内容自适应高度 */
+  }
 }
 
 /* 生成12列栅格系统的列类 */

@@ -1,0 +1,65 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#f8fafc"/>
+  
+  <!-- Main background with gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect x="20" y="20" width="360" height="260" rx="15" fill="url(#bgGradient)"/>
+  
+  <!-- AI Robot Icon -->
+  <circle cx="100" cy="80" r="25" fill="url(#aiGradient)"/>
+  <rect x="85" y="90" width="8" height="8" rx="2" fill="white"/>
+  <rect x="107" y="90" width="8" height="8" rx="2" fill="white"/>
+  <rect x="92" y="102" width="16" height="4" rx="2" fill="white"/>
+  
+  <!-- Planogram Shelf Visualization -->
+  <rect x="160" y="50" width="200" height="120" rx="8" fill="white" opacity="0.9"/>
+  
+  <!-- Shelf structure -->
+  <rect x="170" y="60" width="180" height="8" fill="#e2e8f0"/>
+  <rect x="170" y="85" width="180" height="8" fill="#e2e8f0"/>
+  <rect x="170" y="110" width="180" height="8" fill="#e2e8f0"/>
+  <rect x="170" y="135" width="180" height="8" fill="#e2e8f0"/>
+  
+  <!-- Products on shelves -->
+  <rect x="175" y="68" width="15" height="15" rx="2" fill="#ff6b6b"/>
+  <rect x="195" y="68" width="15" height="15" rx="2" fill="#4ecdc4"/>
+  <rect x="215" y="68" width="15" height="15" rx="2" fill="#45b7d1"/>
+  <rect x="235" y="68" width="15" height="15" rx="2" fill="#f9ca24"/>
+  
+  <rect x="175" y="93" width="15" height="15" rx="2" fill="#6c5ce7"/>
+  <rect x="195" y="93" width="15" height="15" rx="2" fill="#a29bfe"/>
+  <rect x="215" y="93" width="15" height="15" rx="2" fill="#fd79a8"/>
+  
+  <!-- AI Connection Lines -->
+  <path d="M125 80 L160 80" stroke="#00f2fe" stroke-width="3" stroke-dasharray="5,5" opacity="0.8"/>
+  <path d="M125 90 L160 100" stroke="#00f2fe" stroke-width="2" stroke-dasharray="3,3" opacity="0.6"/>
+  <path d="M125 70 L160 60" stroke="#00f2fe" stroke-width="2" stroke-dasharray="3,3" opacity="0.6"/>
+  
+  <!-- Title -->
+  <text x="200" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">Planogram AI Agent</text>
+  <text x="200" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="white" opacity="0.9">零售陈列智能化管理</text>
+  
+  <!-- Stats -->
+  <rect x="50" y="240" width="80" height="30" rx="15" fill="white" opacity="0.2"/>
+  <text x="90" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">节约成本</text>
+  <text x="90" y="264" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">90.9%</text>
+  
+  <rect x="160" y="240" width="80" height="30" rx="15" fill="white" opacity="0.2"/>
+  <text x="200" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">人效提升</text>
+  <text x="200" y="264" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">11倍</text>
+  
+  <rect x="270" y="240" width="80" height="30" rx="15" fill="white" opacity="0.2"/>
+  <text x="310" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">项目价值</text>
+  <text x="310" y="264" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">700万</text>
+</svg>
