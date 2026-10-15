@@ -3,58 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Ziyan's Space</title>
+    <title>联系 | Ziyan Wang</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="site-editorial.css">
+    <link rel="stylesheet" href="site-nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2>Ziyan's Space</h2>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                     <a href="index.html" class="nav-link">Homepage</a>
-                 </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">About Me</a>
-                </li>
-                <li class="nav-item">
-                    <a href="experience.html" class="nav-link">Experience</a>
-                </li>
-                <li class="nav-item">
-                    <a href="articles.html" class="nav-link">Articles</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link active">Contact</a>
-                </li>
-            </ul>
-            <div class="nav-controls">
-                <div class="theme-toggle">
-                    <i class="fas fa-moon" id="theme-icon"></i>
-                </div>
-                <div class="nav-toggle">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <header class="site-header">
+        <a class="wordmark" href="index.html" aria-label="Ziyan Wang 首页">
+            <span class="wordmark-mark">Z</span>
+            <span>ZIYAN WANG<span class="wordmark-sub">AI PRODUCT · SUPPLY CHAIN</span></span>
+        </a>
+        <nav class="main-nav" aria-label="主导航">
+            <a href="index.html#work">精选案例</a>
+            <a href="about.html">个人履历</a>
+            <a href="experience.html">项目经历</a>
+            <a href="articles.html">文章</a>
+            <a class="nav-contact" href="mailto:ruitu.wzy@gmail.com">联系我 <span aria-hidden="true">↗</span></a>
+        </nav>
+    </header>
 
     <!-- Main Content -->
     <main class="main-content">
         <!-- Contact Hero Section -->
         <section class="contact-hero section">
             <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">联系我</h1>
-                    <p class="hero-subtitle">
-                        欢迎与我联系，探讨AI驱动的供应链解决方案与合作机会
-                    </p>
+                <div class="contact-heading">
+                    <div>
+                        <p class="page-kicker">LET'S TALK · AI PRODUCT / SUPPLY CHAIN</p>
+                        <h1 class="hero-title">聊聊真实问题，<em>一起把 AI 做进工作。</em></h1>
+                    </div>
+                    <div class="contact-heading-aside">
+                        <p class="hero-subtitle">欢迎招聘沟通、AI 产品交流，以及供应链数字化合作。邮件通常会在 24 小时内回复。</p>
+                        <a href="mailto:ruitu.wzy@gmail.com" class="contact-primary-link">给我发邮件 <span aria-hidden="true">↗</span></a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -67,27 +51,30 @@
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <h3>邮箱联系</h3>
-                        <p class="contact-value">ruitu.wzy@gmail.com</p>
-                        <p class="contact-note">24小时内回复</p>
+                        <p class="contact-card-kicker">BEST WAY TO REACH ME</p>
+                        <h3>邮件联系</h3>
+                        <a class="contact-value" href="mailto:ruitu.wzy@gmail.com">ruitu.wzy@gmail.com</a>
+                        <p class="contact-note">招聘、产品交流与合作沟通</p>
                     </div>
                     
                     <div class="contact-card">
                         <div class="contact-icon">
                             <i class="fas fa-phone"></i>
                         </div>
-                        <h3>电话咨询</h3>
-                        <p class="contact-value">+86 188 2125 9251</p>
-                        <p class="contact-note">工作时间：9:00-18:00</p>
+                        <p class="contact-card-kicker">PHONE</p>
+                        <h3>电话联系</h3>
+                        <a class="contact-value" href="tel:+8618821259251">+86 188 2125 9251</a>
+                        <p class="contact-note">工作日 9:00–18:00</p>
                     </div>
                     
                     <div class="contact-card">
                         <div class="contact-icon">
-                            <i class="fab fa-linkedin"></i>
+                            <i class="fas fa-file-pdf"></i>
                         </div>
-                        <h3>LinkedIn</h3>
-                        <p class="contact-value">linkedin.com/in/ziyan</p>
-                        <p class="contact-note">专业网络连接</p>
+                        <p class="contact-card-kicker">RESUME · PDF</p>
+                        <h3>查看我的简历</h3>
+                        <a class="contact-value" href="resume/Wang-Ziyan-Product-Manager-CV.pdf" download>下载中文简历</a>
+                        <p class="contact-note">产品经理 · AI 与供应链方向 <span aria-hidden="true">↓</span></p>
                     </div>
                 </div>
             </div>
@@ -100,74 +87,22 @@
             <div class="container">
                 <div class="info-grid">
                     <div class="info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <h3>响应时间</h3>
-                        <p>通常在24小时内回复邮件，紧急事务可通过电话联系</p>
+                        <span class="info-index">01</span>
+                        <h3>沟通响应</h3>
+                        <p>邮件通常在 24 小时内回复</p>
                     </div>
                     
                     <div class="info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h3>工作地点</h3>
-                        <p>杭州，中国 - 支持远程协作和全球项目合作</p>
+                        <span class="info-index">02</span>
+                        <h3>所在地点</h3>
+                        <p>杭州，中国 · 支持远程协作</p>
                     </div>
                     
                     <div class="info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <h3>合作方式</h3>
-                        <p>提供咨询服务、技术合作、演讲培训等多种合作形式</p>
+                        <span class="info-index">03</span>
+                        <h3>交流方向</h3>
+                        <p>AI 产品、供应链数字化与产品交付</p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-
-
-        <!-- Social Links Section -->
-        <section class="social-section section">
-            <div class="container">
-                <div class="social-header">
-                    <h2 class="section-title">关注我的动态</h2>
-                    <p class="section-description">通过社交媒体平台获取最新的技术分享和行业观点</p>
-                </div>
-                
-                <div class="social-grid">
-                    <a href="#" class="social-card">
-                        <div class="social-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <h3>LinkedIn</h3>
-                        <p>专业网络与行业洞察</p>
-                    </a>
-                    
-                    <a href="#" class="social-card">
-                        <div class="social-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <h3>GitHub</h3>
-                        <p>开源项目与代码分享</p>
-                    </a>
-                    
-                    <a href="#" class="social-card">
-                        <div class="social-icon">
-                            <i class="fab fa-twitter"></i>
-                        </div>
-                        <h3>Twitter</h3>
-                        <p>技术动态与思考分享</p>
-                    </a>
-                    
-                    <a href="#" class="social-card">
-                        <div class="social-icon">
-                            <i class="fab fa-medium"></i>
-                        </div>
-                        <h3>Medium</h3>
-                        <p>深度技术文章发布</p>
-                    </a>
                 </div>
             </div>
         </section>
@@ -196,24 +131,11 @@
                     </ul>
                 </div>
                 
-                <div class="footer-section">
-                    <h4 class="footer-subtitle">社交媒体</h4>
-                    <div class="social-links">
-                        <a href="#" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
-                </div>
+                <div class="footer-section"><h4 class="footer-subtitle">直接联系</h4><p><a href="mailto:ruitu.wzy@gmail.com">ruitu.wzy@gmail.com</a></p></div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Ziyan's Space. All rights reserved.</p>
+                <p>&copy; 2026 Ziyan Wang. All rights reserved.</p>
             </div>
         </div>
     </footer>

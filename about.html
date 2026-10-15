@@ -3,47 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Ziyan's Space</title>
+    <title>关于我 | Ziyan Wang</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="site-editorial.css">
+    <link rel="stylesheet" href="site-nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2>Ziyan's Space</h2>
-            </div>
-            <ul class="nav-menu">
-                 <li class="nav-item">
-                     <a href="index.html" class="nav-link">Homepage</a>
-                 </li>
-                 <li class="nav-item">
-                     <a href="about.html" class="nav-link active">About Me</a>
-                 </li>
-                <li class="nav-item">
-                    <a href="experience.html" class="nav-link">Experience</a>
-                </li>
-                <li class="nav-item">
-                    <a href="articles.html" class="nav-link">Articles</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <div class="nav-controls">
-                <div class="theme-toggle">
-                    <i class="fas fa-moon" id="theme-icon"></i>
-                </div>
-                <div class="nav-toggle">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <header class="site-header">
+        <a class="wordmark" href="index.html" aria-label="Ziyan Wang 首页">
+            <span class="wordmark-mark">Z</span>
+            <span>ZIYAN WANG<span class="wordmark-sub">AI PRODUCT · SUPPLY CHAIN</span></span>
+        </a>
+        <nav class="main-nav" aria-label="主导航">
+            <a href="index.html#work">精选案例</a>
+            <a href="about.html" aria-current="page">个人履历</a>
+            <a href="experience.html">项目经历</a>
+            <a href="articles.html">文章</a>
+            <a class="nav-contact" href="mailto:ruitu.wzy@gmail.com">联系我 <span aria-hidden="true">↗</span></a>
+        </nav>
+    </header>
 
     <!-- Main Content -->
     <main class="main-content">
@@ -54,12 +34,11 @@
                     <div class="about-text">
                         <h1 class="about-title">关于我 About Me</h1>
                         <p class="about-subtitle">
-                            来自Alibaba的供应链产品专家，致力于通过系统化设计和AI技术驱动供应链数字化转型
+                            供应链 AI 产品经理，专注把岗位经验、业务系统与 AI Agent 结合，做成能进入真实工作流的产品。
                         </p>
                         <p class="about-description">
-                            专注于供应链产品设计与管理的产品经理，具备扎实的供应链系统设计能力和敏锐的业务洞察力。
-                            拥有近5年的供应链学习与工作经验，兼具扎实的理论基础和丰富的业务实践能力。
-                            擅长深刻挖掘业务痛点，结合需求分析实现用户需求的精准交付，并积极探索AI技术在供应链领域的创新应用。
+                            我在阿里持续负责供应链与商家产品。近两年工作重心转向 AI：先后参与商家 AI 产品、供应链 Agent，以及存量供应链软件的 AI+ 改造。
+                            我擅长从一线流程和系统规则中找到产品切口，再把复杂问题拆成团队可理解、用户可使用、业务可验证的方案。
                         </p>
                     </div>
                     <div class="about-image">
@@ -71,48 +50,98 @@
             </div>
         </section>
 
+        <section class="career-timeline section" aria-labelledby="career-title">
+            <div class="container">
+                <p class="career-kicker">CAREER / 2020 — NOW · 5 YEARS</p>
+                <h2 class="section-title" id="career-title">从供应链系统，走向 AI 产品。</h2>
+                <p class="career-intro">5 年供应链产品经验，从 WMS、供应链商业化交付，逐步延伸到商家 AI 与供应链 Agent。</p>
+                <div class="career-list">
+                    <article class="career-item">
+                        <span class="career-date">2026.05 — 至今</span>
+                        <div><h3>菜鸟 · 供应链 AI</h3><p>负责 Agent Z 客户端与存量供应链软件 AI+ 产品，探索岗位 Agent 如何连接工具、系统和真实任务。</p></div>
+                        <span class="career-tag">SUPPLY CHAIN AGENT</span>
+                    </article>
+                    <article class="career-item">
+                        <span class="career-date">2025.09 — 2026.05</span>
+                        <div><h3>淘宝 · 商家 AI</h3><p>负责「生意管家」AI 客户端产品框架设计，并负责商家物流履约 Agent 产品建设。</p></div>
+                        <span class="career-tag">COMMERCE AI</span>
+                    </article>
+                    <article class="career-item">
+                        <span class="career-date">2022.12 — 2025.09</span>
+                        <div><h3>菜鸟 · 供应链产品</h3><p>负责 WMS 等供应链产品与国际化项目交付，积累仓储、库存、履约和跨国协作经验。</p></div>
+                        <span class="career-tag">WMS · GLOBAL</span>
+                    </article>
+                    <article class="career-item">
+                        <span class="career-date">2022.07 — 2022.12</span>
+                        <div><h3>上海电气 · 供应链产品</h3><p>参与 SRM 与供应链协同平台升级，负责供应商生命周期、订单协同、图纸协同和质量协同等产品模块。</p></div>
+                        <span class="career-tag">SRM · SCM</span>
+                    </article>
+                    <article class="career-item">
+                        <span class="career-date">2020.12 — 2022.06</span>
+                        <div><h3>早期供应链实践 · Michelin / Dell / Alibaba</h3><p>从供应链计划、流程自动化和 WMS 实习项目起步，逐步转向供应链数字化产品。</p></div>
+                        <span class="career-tag">PLANNING · WMS</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <!-- Expertise Section -->
         <section class="expertise section">
             <div class="container">
                 <h2 class="section-title">专业领域</h2>
                 <div class="expertise-areas">
                     <div class="area-item">
-                        <div class="area-icon">
-                            <i class="fas fa-cogs"></i>
+                        <div class="area-card-top">
+                            <span class="area-index">01 / AI PRODUCT</span>
+                            <div class="area-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="3" y="3" width="8" height="8" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect x="13" y="13" width="8" height="8" rx="2"/><path d="M17 13V9a2 2 0 0 0-2-2h-4"/>
+                                </svg>
+                            </div>
                         </div>
-                        <h3 class="area-title">WMS产品设计</h3>
+                        <h3 class="area-title">供应链 Agent 产品</h3>
                         <p class="area-description">
-                            专注于仓储管理系统的产品设计与优化，深度理解仓储业务流程，
-                            具备丰富的WMS产品设计经验和敏锐的业务洞察力。
+                            从岗位职责与业务目标出发，设计 Agent 的任务、技能、系统连接和结果交付方式，
+                            让 AI 能够进入供应链的日常工作流程。
                         </p>
                         <div class="area-skills">
-                            <span class="skill-tag">仓储管理</span>
-                            <span class="skill-tag">库存优化</span>
-                            <span class="skill-tag">流程设计</span>
-                            <span class="skill-tag">系统架构</span>
+                            <span class="skill-tag">Agent 定义</span>
+                            <span class="skill-tag">任务编排</span>
+                            <span class="skill-tag">人机协同</span>
+                            <span class="skill-tag">安全边界</span>
                         </div>
                     </div>
                     
                     <div class="area-item">
-                        <div class="area-icon">
-                            <i class="fas fa-network-wired"></i>
+                        <div class="area-card-top">
+                            <span class="area-index">02 / ENTERPRISE SYSTEMS</span>
+                            <div class="area-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+                                </svg>
+                            </div>
                         </div>
-                        <h3 class="area-title">供应链产品管理</h3>
+                        <h3 class="area-title">供应链与企业软件</h3>
                         <p class="area-description">
-                            结合扎实的理论基础和丰富的实践经验，运用系统性思维
-                            设计高效的供应链解决方案，推动业务数字化转型。
+                            熟悉仓储、库存、订单和履约场景，能把复杂规则转成系统产品方案，
+                            并推动标准能力、定制项目与 AI+ 改造落地。
                         </p>
                         <div class="area-skills">
-                            <span class="skill-tag">供应链设计</span>
-                            <span class="skill-tag">业务分析</span>
-                            <span class="skill-tag">数字化转型</span>
-                            <span class="skill-tag">流程优化</span>
+                            <span class="skill-tag">WMS</span>
+                            <span class="skill-tag">履约</span>
+                            <span class="skill-tag">系统集成</span>
+                            <span class="skill-tag">AI+ 改造</span>
                         </div>
                     </div>
                     
                     <div class="area-item">
-                        <div class="area-icon">
-                            <i class="fas fa-globe"></i>
+                        <div class="area-card-top">
+                            <span class="area-index">03 / GLOBAL DELIVERY</span>
+                            <div class="area-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>
+                                </svg>
+                            </div>
                         </div>
                         <h3 class="area-title">国际化项目</h3>
                         <p class="area-description">
@@ -129,112 +158,23 @@
             </div>
         </section>
 
-        <!-- Core Skills Section -->
+        <!-- AI Product Practice and Credentials -->
         <section class="core-skills section">
             <div class="container">
-                <h2 class="section-title">核心技能</h2>
-                <div class="skills-categories">
-                    <div class="skill-category">
-                        <h3 class="category-title">技术技能</h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span class="skill-name">MATLAB</span>
-                                    <div class="skill-image-placeholder">
-                                        <img src="images/skills/matlab-skill.jpg" alt="MATLAB技能" class="skill-image">
-                                    </div>
-                                </div>
-                                <p class="skill-description">擅长使用MATLAB进行供应链领域的仿真优化、算法建模与数据可视化分析，提升物流与供应链的决策效率与运作能力。</p>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span class="skill-name">Excel VBA</span>
-                                    <div class="skill-image-placeholder">
-                                        <img src="images/skills/excel-vba-skill.jpg" alt="Excel VBA技能" class="skill-image">
-                                    </div>
-                                </div>
-                                <p class="skill-description">利用VBA（Visual Basic for Applications）开发自动化工具，实现高效的数据处理与办公流程优化。</p>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span class="skill-name">Product Design X AI</span>
-                                    <div class="skill-image-placeholder">
-                                        <img src="images/skills/product-ai-skill.jpg" alt="Product AI技能" class="skill-image">
-                                    </div>
-                                </div>
-                                <p class="skill-description">将产品设计与人工智能结合，善于使用Cursor、Trae或IDE Copilot等工具探索智能化研发流程，推动创新产品研发和迭代。</p>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span class="skill-name">办公软件</span>
-                                    <div class="skill-image-placeholder">
-                                        <img src="images/skills/office-tools-skill.jpg" alt="办公软件技能" class="skill-image">
-                                    </div>
-                                </div>
-                                <p class="skill-description">熟练使用XMind、Drawio等工具，进行高效的商业逻辑推演和产品架构设计，助力项目落地。</p>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span class="skill-name">∞</span>
-                                    <div class="skill-image-placeholder">
-                                        <img src="images/skills/infinite-ai-skill.jpg" alt="无限AI技能" class="skill-image">
-                                    </div>
-                                </div>
-                                <p class="skill-description">凭借快速学习和适应能力，熟练驾驭基于AI的多类生产力工具，推动效率提升与创新实践。</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3 class="category-title">专业资质</h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span class="skill-name">New Product Development Professional</span>
-                                    <div class="cert-image-placeholder">
-                                        <img src="images/certificates/npdp-cert.jpg" alt="NPDP认证" class="cert-image">
-                                    </div>
-                                </div>
-                                <p class="skill-description">NPDP认证，国际化的新产品开发专业能力，专注创新管理和产品开发流程的最新实践。</p>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span class="skill-name">Project Management Professional</span>
-                                    <div class="cert-image-placeholder">
-                                        <img src="images/certificates/pmp-cert.jpg" alt="PMP认证" class="cert-image">
-                                    </div>
-                                </div>
-                                <p class="skill-description">PMP认证，全球公认的项目管理权威认证，系统化提升项目策划与执行能力。</p>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span class="skill-name">Certified in Planning & Inventory Management</span>
-                                    <div class="cert-image-placeholder">
-                                        <img src="images/certificates/cpim-cert.jpg" alt="CPIM认证" class="cert-image">
-                                    </div>
-                                </div>
-                                <p class="skill-description">CPIM认证，深耕供应链及库存优化的专业能力，提升生产流程和高效运营管理。</p>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span class="skill-name">Chartered Institute of Logistics and Transport</span>
-                                    <div class="cert-image-placeholder">
-                                        <img src="images/certificates/cilt-cert.jpg" alt="CILT认证" class="cert-image">
-                                    </div>
-                                </div>
-                                <p class="skill-description">CILT认证，全球物流与运输管理领域的权威认证，专注于供应链及运输系统的优化设计。</p>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span class="skill-name">Alibaba Cloud Certification</span>
-                                    <div class="cert-image-placeholder">
-                                        <img src="images/certificates/acp-cert.jpg" alt="ACP认证" class="cert-image">
-                                    </div>
-                                </div>
-                                <p class="skill-description">阿里云APC认证，云计算领域的专业认证，专注于阿里云技术在企业架构中的全面应用能力。</p>
-                            </div>
-                        </div>
-                    </div>
+                <h2 class="section-title">AI 产品工作方式与专业资质</h2>
+                <div class="profile-practice-grid">
+                    <article class="profile-practice-card">
+                        <p class="career-kicker">AI NATIVE PRACTICE</p>
+                        <h3>把 AI 用进产品工作的完整链路。</h3>
+                        <p>连续 4 年深度使用 ChatGPT 等主流 AI 产品，将 AI 融入产品研究、需求分析、原型开发、数据分析与 Coding 协作。</p>
+                        <div class="profile-chips"><span>产品研究</span><span>需求分析</span><span>原型验证</span><span>数据分析</span><span>Coding 协作</span></div>
+                    </article>
+                    <article class="profile-practice-card">
+                        <p class="career-kicker">CERTIFICATIONS</p>
+                        <h3>供应链、产品开发与项目管理。</h3>
+                        <p>与当前产品方向相关的认证：</p>
+                        <div class="profile-chips"><span>NPDP</span><span>PMP</span><span>CPIM</span><span>阿里云 ACP</span></div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -242,7 +182,7 @@
         <!-- Education Section -->
         <section class="education section">
             <div class="container">
-                <h2 class="section-title">教育背景 Eduction Background</h2>
+                <h2 class="section-title">教育背景</h2>
                 <div class="education-list">
                     <div class="education-item">
                         <div class="education-image-placeholder">
@@ -278,8 +218,9 @@
                     <h2 class="section-title">职业理念</h2>
                     <div class="vision-grid">
                         <div class="vision-item">
-                            <div class="vision-icon">
-                                <i class="fas fa-search"></i>
+                            <div class="vision-item-head">
+                                <div class="vision-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="m8 11 2 2 4-4"/></svg></div>
+                                <span class="vision-index">01 / DISCOVER</span>
                             </div>
                             <h3 class="vision-title">深度洞察</h3>
                             <p class="vision-description">
@@ -289,8 +230,9 @@
                         </div>
                         
                         <div class="vision-item">
-                            <div class="vision-icon">
-                                <i class="fas fa-cogs"></i>
+                            <div class="vision-item-head">
+                                <div class="vision-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3M12 12V8"/></svg></div>
+                                <span class="vision-index">02 / SYSTEMS</span>
                             </div>
                             <h3 class="vision-title">系统思维</h3>
                             <p class="vision-description">
@@ -300,8 +242,9 @@
                         </div>
                         
                         <div class="vision-item">
-                            <div class="vision-icon">
-                                <i class="fas fa-globe"></i>
+                            <div class="vision-item-head">
+                                <div class="vision-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div>
+                                <span class="vision-index">03 / GLOBAL</span>
                             </div>
                             <h3 class="vision-title">国际视野</h3>
                             <p class="vision-description">
@@ -338,24 +281,11 @@
                     </ul>
                 </div>
                 
-                <div class="footer-section">
-                    <h4 class="footer-subtitle">社交媒体</h4>
-                    <div class="social-links">
-                        <a href="#" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
-                </div>
+                <div class="footer-section"><h4 class="footer-subtitle">直接联系</h4><p><a href="mailto:ruitu.wzy@gmail.com">ruitu.wzy@gmail.com</a></p></div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Ziyan's Space. All rights reserved.</p>
+                <p>&copy; 2026 Ziyan Wang. All rights reserved.</p>
             </div>
         </div>
     </footer>

@@ -3,59 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Articles - Ziyan's Space</title>
+    <title>文章 | Ziyan Wang</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="site-editorial.css">
+    <link rel="stylesheet" href="site-nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2>Ziyan's Space</h2>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                     <a href="index.html" class="nav-link">Homepage</a>
-                 </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">About Me</a>
-                </li>
-                <li class="nav-item">
-                    <a href="experience.html" class="nav-link">Experience</a>
-                </li>
-                <li class="nav-item">
-                    <a href="articles.html" class="nav-link active">Articles</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <div class="nav-controls">
-                <div class="theme-toggle">
-                    <i class="fas fa-moon" id="theme-icon"></i>
-                </div>
-                <div class="nav-toggle">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <header class="site-header">
+        <a class="wordmark" href="index.html" aria-label="Ziyan Wang 首页">
+            <span class="wordmark-mark">Z</span>
+            <span>ZIYAN WANG<span class="wordmark-sub">AI PRODUCT · SUPPLY CHAIN</span></span>
+        </a>
+        <nav class="main-nav" aria-label="主导航">
+            <a href="index.html#work">精选案例</a>
+            <a href="about.html">个人履历</a>
+            <a href="experience.html">项目经历</a>
+            <a href="articles.html" aria-current="page">文章</a>
+            <a class="nav-contact" href="mailto:ruitu.wzy@gmail.com">联系我 <span aria-hidden="true">↗</span></a>
+        </nav>
+    </header>
 
     <!-- Main Content -->
     <main class="main-content">
         <!-- Articles Hero Section -->
         <section class="articles-hero section">
             <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">文章 Articles</h1>
-                    <p class="hero-subtitle">
-                        分享AI与供应链管理的深度思考，探讨技术创新与行业发展趋势，
-                        为数字化转型提供有价值的观点和见解。
-                    </p>
+                <div class="articles-heading">
+                    <div>
+                        <p class="page-kicker">FIELD NOTES · AI / SUPPLY CHAIN</p>
+                        <h1 class="hero-title" style="white-space: normal; overflow: visible; text-overflow: clip;">把实践写下来，<br><em>让经验继续生长。</em></h1>
+                    </div>
+                    <p class="hero-subtitle">记录供应链产品、AI 工作方式与项目交付中的真实观察。从一线问题出发，把做过的事沉淀成可复用的思考。</p>
                 </div>
             </div>
         </section>
@@ -66,40 +46,30 @@
         <section class="articles-grid-section section">
             <div class="container">
                 <div class="articles-grid">
-                    <article class="article-card" data-category="wms">
+                    <article class="article-card article-featured" data-category="wms">
                         <div class="article-image">
-                            <div class="article-placeholder">
-                            </div>
+                            <div class="article-placeholder"><img src="images/articles/wms-product-manager-journey-male.jpg" alt="一位男性产品经理穿行在仓库中，沿着供应链路线从一线现场走向城市与全球交付场景的编辑插画" loading="lazy"></div>
+                            <span class="article-image-label">PRODUCT FIELD NOTES</span>
                         </div>
                         <div class="article-content">
                             <div class="article-meta">
                                 <span class="article-date">2025-07-13</span>
-                                <span class="article-category">从业思考</span>
+                                <span class="article-category">职业经历 · WMS</span>
                             </div>
-                            <h3 class="article-title">WMS产品经理激荡三十年</h3>
+                            <h2 class="article-title">WMS 产品经理激荡三十年</h2>
                             <p class="article-excerpt">
-                                从学生到WMS产品经理，我的人生就像一个"未上线的版本"，一直在更新，一直在热更，还一直没有稳定版本号。
+                                从学生到 WMS 产品经理，我的人生就像一个“未上线的版本”：一直在更新，一直在热更，也一直在寻找更稳定的版本号。
                             </p>
                             <div class="article-tags">
                                 <span class="tag">WMS</span>
                                 <span class="tag">产品经理</span>
                                 <span class="tag">数字化交付</span>
                             </div>
-                            <a href="Articles_Front/article-wms.html" class="read-more">阅读全文 <i class="fas fa-arrow-right"></i></a>
+                            <a href="Articles_Front/article-wms.html" class="read-more">阅读全文 <span aria-hidden="true">↗</span></a>
                         </div>
                     </article>
                 </div>
                 
-                <!-- Pagination -->
-                <div class="pagination">
-                    <button class="pagination-btn" disabled>
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <span class="pagination-info">第 1 页，共 2 页</span>
-                    <button class="pagination-btn">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
             </div>
         </section>
 
@@ -129,24 +99,11 @@
                     </ul>
                 </div>
                 
-                <div class="footer-section">
-                    <h4 class="footer-subtitle">社交媒体</h4>
-                    <div class="social-links">
-                        <a href="#" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
-                </div>
+                <div class="footer-section"><h4 class="footer-subtitle">直接联系</h4><p><a href="mailto:ruitu.wzy@gmail.com">ruitu.wzy@gmail.com</a></p></div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Ziyan's Space. All rights reserved.</p>
+                <p>&copy; 2026 Ziyan Wang. All rights reserved.</p>
             </div>
         </div>
     </footer>

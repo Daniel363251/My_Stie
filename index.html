@@ -3,244 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ziyan's Personal Website</title>
-    <meta name="description" content="Ziyan的个人网站 - AI、产品与创新领域的专业分享">
-    <meta name="keywords" content="AI, 产品, 创新, 技术, 个人网站">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="Ziyan Wang，供应链 AI 产品经理，专注供应链 Agent、商家 AI 与企业软件智能化。">
+    <meta name="theme-color" content="#f4f1e9">
+    <title>Ziyan Wang — Supply Chain Product</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="site-nav.css">
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2>Ziyan's Space</h2>
-            </div>
-            <ul class="nav-menu">
-                 <li class="nav-item">
-                     <a href="index.html" class="nav-link active">Homepage</a>
-                 </li>
-                 <li class="nav-item">
-                     <a href="about.html" class="nav-link">About Me</a>
-                 </li>
-                <li class="nav-item">
-                    <a href="experience.html" class="nav-link">Experience</a>
-                </li>
-                <li class="nav-item">
-                    <a href="articles.html" class="nav-link">Articles</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <div class="nav-controls">
-                <div class="theme-toggle">
-                    <i class="fas fa-moon" id="theme-icon"></i>
-                </div>
-                <div class="nav-toggle">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <header class="site-header">
+        <a class="wordmark" href="index.html" aria-label="Ziyan Wang 首页">
+            <span class="wordmark-mark">Z</span>
+            <span>ZIYAN WANG<span class="wordmark-sub">AI PRODUCT · SUPPLY CHAIN</span></span>
+        </a>
+        <nav class="main-nav" aria-label="主导航">
+            <a href="#work">精选案例</a>
+            <a href="about.html">个人履历</a>
+            <a href="experience.html">项目经历</a>
+            <a href="articles.html">文章</a>
+            <a class="nav-contact" href="mailto:ruitu.wzy@gmail.com">联系我 <span aria-hidden="true">↗</span></a>
+        </nav>
+    </header>
 
-    <!-- 主页面 -->
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <h1 class="hero-title">欢迎来到我的数字空间</h1>
-                    <p class="hero-subtitle">专注于AI驱动的数字化供应链产品创新</p>
-                    <div class="hero-buttons">
-                        <a href="#about" class="btn btn-primary">了解更多</a>
-                        <a href="#contact" class="btn btn-secondary">联系我</a>
-                    </div>
+        <section class="hero page-wrap" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="eyebrow-dot"></span> AI PRODUCT · SUPPLY CHAIN AGENTS</p>
+                <h1 id="hero-title">把供应链经验，<em>变成能工作的 AI 产品。</em></h1>
+                <p class="hero-intro">我是 Ziyan，拥有 5 年供应链产品经验，目前负责供应链 AI 产品。近两年聚焦商家 AI、Agent Z 与企业软件智能化，擅长把岗位流程、业务系统和人机协作机制转成可落地的产品能力。</p>
+                <div class="hero-actions">
+                    <a class="button button-dark" href="#work">看一个代表案例 <span aria-hidden="true">↓</span></a>
+                    <a class="text-link" href="experience.html">完整项目经历 <span aria-hidden="true">↗</span></a>
+                    <a class="text-link" href="resume/Wang-Ziyan-Product-Manager-CV.pdf" download>下载 PDF 简历 <span aria-hidden="true">↓</span></a>
                 </div>
-                <div class="hero-image">
-                    <div class="avatar-container">
-                        <div class="avatar" role="img" aria-label="用户头像" title="用户头像"></div>
-                    </div>
-                </div>
+                <div class="hero-note"><span class="note-rule"></span><span>最近在实践：让供应链 Agent 从回答问题走向持续执行任务</span></div>
+            </div>
+            <figure class="hero-portrait">
+                <img src="images/profile/profile-photo.jpg" alt="Ziyan 的个人照片">
+                <figcaption><span>杭州 · 中国</span><span>AGENT / COMMERCE / SUPPLY CHAIN</span></figcaption>
+                <span class="portrait-index">01 / ABOUT</span>
+            </figure>
+            <span class="hero-side-label" aria-hidden="true">FIELD NOTES & PRODUCT WORK</span>
+        </section>
+
+        <section class="proof-strip" aria-label="个人数据与实践">
+            <div class="proof-inner page-wrap">
+                <p class="proof-intro">个人实践 / AI 产品<br>把 AI 融入真实工作</p>
+                <div class="proof-item"><strong>约 50<span>亿</span></strong><span>月均 Token 使用量 · AI 工具</span></div>
+                <div class="proof-item"><strong>4<span>年</span></strong><span>持续深度使用 AI 产品</span></div>
+                <div class="proof-item"><strong>6<span>国</span></strong><span>近 2 年项目交付</span></div>
+                <div class="proof-item proof-item-last"><strong>1.3<span>亿+</span></strong><span>供应链项目累计商业价值</span></div>
             </div>
         </section>
 
-        <!-- Overview Sections Container -->
-        <div class="overview-sections-container">
-            <div class="container">
-                <div class="overview-grid">
-                    <!-- About Me Section -->
-                    <section id="about" class="section about-overview">
-                        <div class="overview-card">
-                            <div class="overview-icon">
-                                <i class="fas fa-user-circle"></i>
-                            </div>
-                            <div class="overview-content">
-                                <h2 class="overview-title">About Me</h2>
-                                <p class="overview-description">
-                                    供应链产品经理，专注于AI技术在数字化供应链领域的应用与创新。
-                                    致力于通过AI技术优化供应链流程，提升运营效率。
-                                </p>
-                                <div class="overview-stats">
-                                    <div class="stat-item">
-                                        <span class="stat-number">AI</span>
-                                        <span class="stat-label">驱动优化</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <span class="stat-number">数字化</span>
-                                        <span class="stat-label">供应链</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <span class="stat-number">产品</span>
-                                        <span class="stat-label">设计</span>
-                                    </div>
-                                </div>
-                                <a href="about.html" class="overview-link">
-                                    了解更多 <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Experience Section -->
-                    <section id="experience" class="section experience-overview">
-                        <div class="overview-card">
-                            <div class="overview-icon">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <div class="overview-content">
-                                <h2 class="overview-title">Experience</h2>
-                                <p class="overview-description">
-                                    丰富的AI驱动供应链项目经验，包括智能供应链管理平台、智能物流调度系统、
-                                    供应商风险管理系统等多个成功项目。
-                                </p>
-                                <div class="overview-stats">
-                                    <div class="stat-item">
-                                        <span class="stat-number">3+</span>
-                                        <span class="stat-label">年项目经验</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <span class="stat-number">5+</span>
-                                        <span class="stat-label">成功项目</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <span class="stat-number">30+</span>
-                                        <span class="stat-label">覆盖城市</span>
-                                    </div>
-                                </div>
-                                <a href="experience.html" class="overview-link">
-                                    查看详情 <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Articles Section -->
-                    <section id="articles" class="section articles-overview">
-                        <div class="overview-card">
-                            <div class="overview-icon">
-                                <i class="fas fa-pen-alt"></i>
-                            </div>
-                            <div class="overview-content">
-                                <h2 class="overview-title">Articles</h2>
-                                <p class="overview-description">
-                                    分享AI与供应链管理的深度思考，涵盖技术洞察、行业分析、未来趋势等多个维度，
-                                    为行业发展提供有价值的观点和见解。
-                                </p>
-                                <div class="overview-stats">
-                                    <div class="stat-item">
-                                        <span class="stat-number">15+</span>
-                                        <span class="stat-label">技术文章</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <span class="stat-number">3</span>
-                                        <span class="stat-label">专业领域</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <span class="stat-number">1000+</span>
-                                        <span class="stat-label">阅读量</span>
-                                    </div>
-                                </div>
-                                <a href="articles.html" class="overview-link">
-                                    查看文章 <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Contact Section -->
-                    <section id="contact" class="section contact-overview">
-                        <div class="overview-card">
-                            <div class="overview-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="overview-content">
-                                <h2 class="overview-title">Contact</h2>
-                                <p class="overview-description">
-                                    欢迎与我联系，探讨AI驱动的供应链解决方案、技术合作机会，
-                                    或分享您在供应链数字化转型方面的想法和需求。
-                                </p>
-                                <div class="overview-stats">
-                                    <div class="stat-item">
-                                        <span class="stat-number">24h</span>
-                                        <span class="stat-label">响应时间</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <span class="stat-number">多种</span>
-                                        <span class="stat-label">联系方式</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <span class="stat-number">全球</span>
-                                        <span class="stat-label">合作范围</span>
-                                    </div>
-                                </div>
-                                <a href="contact.html" class="overview-link">
-                                    联系我 <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </section>
-                </div>
+        <section id="work" class="featured-work page-wrap" aria-labelledby="work-title">
+            <div class="section-heading">
+                <p class="eyebrow">SELECTED WORK / AI PRODUCT</p>
+                <h2 id="work-title">从业务现场出发，<br><em>让 AI 真正参与工作。</em></h2>
+                <p>从供应链岗位、业务系统和任务流程出发，探索 AI 产品怎样进入真实工作流，并交付可验证的结果。</p>
             </div>
-        </div>
+            <article class="selected-case">
+                <div class="selected-case-visual">
+                    <img src="images/projects/agentz-warehouse-landscape.jpg" alt="现代仓储与自动化物流场景，代表供应链 Agent 的应用环境" loading="lazy">
+                </div>
+                <div class="selected-case-copy">
+                    <div class="case-meta"><span>供应链 · Agent Z</span><span>2026.05 — 至今</span></div>
+                    <h3>让供应链 Agent 从“能回答”，走向“能持续完成任务”。</h3>
+                    <p>我负责 Agent Z 客户端与存量供应链软件 AI+ 产品。围绕岗位化 Agent、任务调度、系统连接、协同执行和人工确认，推动 AI 能力进入真实供应链工作流。</p>
+                    <div class="case-tags"><span>Agent 产品</span><span>供应链 AI</span><span>人机协同</span></div>
+                    <a class="case-link" href="Project-Detail/AgentZ_Project.html">查看 Agent Z 案例 <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+            <article class="selected-case">
+                <div class="selected-case-visual">
+                    <img src="images/projects/shengyi-guanjia-product.jpg" alt="生意管家 AI 客户端首页，展示新任务入口、技能商店和商家任务建议" loading="lazy">
+                </div>
+                <div class="selected-case-copy">
+                    <div class="case-meta"><span>生意管家 · 商家 AI</span><span>2025.09—2026.05</span></div>
+                    <h3>设计 AI 客户端框架，让 AI 接住商家经营任务。</h3>
+                    <p>我主导生意管家 2.0 AI 客户端产品设计，围绕店长、运营、美工三类角色，规划经营洞察首页并定义文本、任务执行、创意、文档和 ChatBot 五种交互模式。产品累计服务商家超过 400 万。</p>
+                    <div class="case-tags"><span>AI 客户端框架</span><span>5 种交互模式</span><span>经营任务</span></div>
+                    <a class="case-link" href="Project-Detail/Shengyi_Guanjia_Project.html">查看 AI 客户端框架案例 <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+            <article class="selected-case">
+                <div class="selected-case-visual">
+                    <img src="images/projects/supply-chain-cli-cover.jpg" alt="供应链项目脚手架 CLI 的视觉示意：终端初始化 WMS 项目，并生成基础结构与 AI 配置" loading="lazy">
+                </div>
+                <div class="selected-case-copy">
+                    <div class="case-meta"><span>供应链工具 · WMS</span><span>项目脚手架 CLI</span></div>
+                    <h3>把供应链项目启动流程，做成可复用的 CLI 脚手架。</h3>
+                    <p>设计并落地 WMS 项目初始化 CLI，将目录结构生成、AI 环境配置与蓝图规则拉取串成标准启动流程，帮助团队从空目录进入蓝图编写与开发准备。</p>
+                    <div class="case-tags"><span>CLI 设计</span><span>项目初始化</span><span>AI 研发工作流</span></div>
+                    <a class="case-link" href="Project-Detail/Supply_Chain_CLI_Project.html">查看项目案例 <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+        </section>
+
+        <section class="approach-band">
+            <div class="page-wrap approach-inner">
+                <p class="eyebrow">HOW I WORK</p>
+                <h2>懂现场，也懂系统。<br><em>把两边的话都说清楚。</em></h2>
+                <div class="approach-columns">
+                    <article><span>01 / DOMAIN</span><h3>从真实流程出发</h3><p>仓库、库存、履约与异常处理。先理解现场为什么这么做，再把规则放进产品。</p></article>
+                    <article><span>02 / DELIVERY</span><h3>把复杂度拆成可交付</h3><p>在客户、业务、产品与研发之间建立共同语言，让方案从蓝图走到上线。</p></article>
+                    <article><span>03 / AI PRODUCT</span><h3>让 AI 进入真实工作流</h3><p>围绕任务、工具、权限与结果交付设计 Agent 产品，在关键决策处保留人的判断。</p></article>
+                </div>
+                <a class="light-link" href="about.html">更多关于我的经历 <span aria-hidden="true">↗</span></a>
+            </div>
+        </section>
+
+        <section class="closing page-wrap" aria-labelledby="closing-title">
+            <div>
+                <p class="eyebrow">A NOTE TO THE NEXT TEAM</p>
+                <h2 id="closing-title">如果你也在解决<br><em>复杂的业务问题，</em><br>我很愿意聊聊。</h2>
+            </div>
+            <div class="closing-actions">
+                <a class="button button-orange" href="mailto:ruitu.wzy@gmail.com">给我发邮件 <span aria-hidden="true">↗</span></a>
+                <a class="text-link" href="Articles_Front/article-wms.html">读我的一篇文章 <span aria-hidden="true">↗</span></a>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Ziyan's Space</h3>
-                    <p>专注于AI、产品与创新的数字空间</p>
-                </div>
-                <div class="footer-section">
-                    <h4>快速链接</h4>
-                    <ul>
-                        <li><a href="#about">关于我</a></li>
-                        <li><a href="#experience">经验</a></li>
-                        <li><a href="#articles">文章</a></li>
-                        <li><a href="#contact">联系</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>关注我</h4>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Ziyan's Space. All rights reserved.</p>
-            </div>
-        </div>
+    <footer class="site-footer page-wrap">
+        <a class="footer-mark" href="index.html">Z<span>.</span></a>
+        <p>AI 产品 · 供应链 Agent · 商家 AI · 国际化交付</p>
+        <span>© 2026 Ziyan Wang</span>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>

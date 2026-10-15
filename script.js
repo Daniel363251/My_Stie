@@ -33,7 +33,9 @@ function initializeTheme() {
     }
     
     // 主题切换事件监听
-    themeToggle.addEventListener('click', toggleTheme);
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
 }
 
 function toggleTheme() {
@@ -55,6 +57,7 @@ function toggleTheme() {
 }
 
 function updateThemeIcon(theme) {
+    if (!themeIcon) return;
     if (theme === 'dark') {
         themeIcon.className = 'fas fa-sun';
     } else {
@@ -64,6 +67,7 @@ function updateThemeIcon(theme) {
 
 function updateNavbarStyle(theme) {
     const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
     const scrollY = window.scrollY;
     
     if (scrollY > 100) {
@@ -86,6 +90,7 @@ function updateNavbarStyle(theme) {
 
 // 导航菜单功能
 function initializeNavigation() {
+    if (!navToggle || !navMenu) return;
     // 移动端菜单切换
     navToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
@@ -461,7 +466,7 @@ function createBackToTopButton() {
 // 键盘导航支持
 document.addEventListener('keydown', (e) => {
     // ESC键关闭移动端菜单
-    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+    if (navMenu && navToggle && e.key === 'Escape' && navMenu.classList.contains('active')) {
         navMenu.classList.remove('active');
         navToggle.classList.remove('active');
         
@@ -489,7 +494,7 @@ function debounce(func, wait) {
 // 窗口大小改变时的处理
 window.addEventListener('resize', debounce(() => {
     // 如果窗口变大，关闭移动端菜单
-    if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+    if (navMenu && navToggle && window.innerWidth > 768 && navMenu.classList.contains('active')) {
         navMenu.classList.remove('active');
         navToggle.classList.remove('active');
         
