@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DeepSeek Harness 采购工作台案例：把请购单与订单处理、AI 智能表格和 Agent 共用数据能力放进同一采购工作流。">
+    <meta name="theme-color" content="#f4f1e9">
+    <title>采购工作台 · AI 智能表格 | Ziyan Wang</title>
+    <link rel="stylesheet" href="../site-nav.css">
+    <link rel="stylesheet" href="procurement-case.css">
+    <link rel="stylesheet" href="../project-image-zoom.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <a class="wordmark" href="../index.html" aria-label="Ziyan Wang 首页"><span class="wordmark-mark">Z</span><span>ZIYAN WANG<span class="wordmark-sub">AI PRODUCT · SUPPLY CHAIN</span></span></a>
+        <nav class="main-nav" aria-label="主导航">
+            <a href="../index.html#work">精选案例</a><a href="../about.html">个人履历</a><a href="../experience.html">项目经历</a><a href="../articles.html">文章</a><a class="nav-contact" href="mailto:ruitu.wzy@gmail.com">联系我 <span aria-hidden="true">↗</span></a>
+        </nav>
+    </header>
+    <main class="proc-main">
+        <section class="proc-hero">
+            <div class="proc-hero-copy">
+                <a class="proc-back" href="../index.html#work">← 返回精选案例</a>
+                <p class="proc-kicker">DEEPSEEK HARNESS · PROCUREMENT · AI TABLE</p>
+                <h1>让 AI 智能表格，<em>参与采购日常。</em></h1>
+                <p class="proc-summary">基于 DeepSeek Harness 构建采购业务工作台，把请购需求与采购订单整理、认领跟进和 AI 表格能力放进同一流程。采购员可以在业务面板里处理数据，也可以让 Agent 通过工具读取和更新同一份宿主数据。</p>
+                <div class="proc-meta"><span>独立项目 · 2026</span><span>AI 产品设计与实现</span><span>开源仓库</span></div>
+                <a class="proc-repo" href="https://github.com/Daniel363251/dsh-procurement-intake" target="_blank" rel="noreferrer">在 GitHub 查看项目 <span aria-hidden="true">↗</span></a>
+            </div>
+            <figure class="proc-cover"><img src="../images/projects/procurement-ai-table-workspace.png" alt="DeepSeek Harness 采购工作台实际界面截图，展示工作台仪表盘与 AI 采购进展分析对话"><figcaption><span>PROCUREMENT INTAKE</span><span>DATA · TABLE · AGENT</span></figcaption></figure>
+        </section>
+
+        <section class="proc-context" aria-label="项目概览">
+            <div><span>应用场景</span><strong>采购请购与订单跟进</strong></div>
+            <div><span>产品形态</span><strong>Harness 右侧栏工作台</strong></div>
+            <div><span>核心能力</span><strong>AI 智能表格 + Agent 工具</strong></div>
+        </section>
+
+        <section class="proc-story" aria-labelledby="proc-story-title">
+            <div class="proc-story-heading"><p class="proc-kicker">PRODUCT STORY</p><h2 id="proc-story-title">让表格成为业务和 Agent 的共同工作面。</h2><p>采购数据既要便于人工判断和持续跟进，也要能被 Agent 理解并在授权的业务规则内处理。工作台围绕这两种协作方式建立统一的数据和操作入口。</p></div>
+            <div class="proc-timeline">
+                <article class="proc-step"><span class="proc-step-number">01</span><div><p class="proc-step-name">业务问题</p><h3>请购单、采购订单与跟进动作分散在不同处理环节。</h3><p>采购员需要先整理请购明细，再筛选和认领自己的需求，随后持续维护供应商、预计发货时间和下一步动作。项目将这些处理步骤集中到一个可操作的工作台中。</p></div></article>
+                <article class="proc-step"><span class="proc-step-number">02</span><div><p class="proc-step-name">智能表格</p><h3>把自然语言指令转成可以落到数据上的表格能力。</h3><p>复用 AI 智能表格能力，提供排序、筛选、分页、填色、分组、列配置和 AI 字段。采购员可用自然语言生成筛选与填色规则，也可为当前数据逐行生成扩展字段。</p></div></article>
+                <article class="proc-step proc-workflow-step"><span class="proc-step-number">03</span><div><p class="proc-step-name">业务工作流</p><h3>从导入、认领到订单交付和跟进，串起日常动作。</h3><div class="proc-actions"><p><b>需求整理</b>　导入 NC 请购单，识别字段并提示缺失或重复信息。</p><p><b>认领跟进</b>　筛选需求、跨页勾选认领，维护供应商、日期、待办与备注。</p><p><b>订单交付</b>　导入采购订单，查看明细，并同步关联需求的订单状态。</p><p><b>AI 协作</b>　支持 AI 筛选、填色和逐行生成字段，模型设置可在面板内调整。</p></div></div></article>
+                <article class="proc-step proc-coordination-step"><span class="proc-step-number">04</span><div><p class="proc-step-name">人机协作</p><h3>人做业务判断，Agent 处理明确任务，共用一份采购数据。</h3><div class="proc-coordination-grid"><article><span>HUMAN · 人来做</span><h4>判断和维护业务信息</h4><p>核对导入预览与待复核明细，决定需求认领范围；补充供应商、预计发货时间、下一步待办和备注，并跟进订单交付。</p></article><article><span>AGENT · Agent 来做</span><h4>执行查询与重复操作</h4><p>按指令查看和搜索需求、读取工作区请购文件，并通过采购工具认领需求或更新供应商等跟进信息。</p></article><article><span>SHARED · 如何协作</span><h4>操作进入同一工作台数据</h4><p>工作台和 Agent 调用同一套宿主采购服务、读写同一份数据。Agent 完成查询或变更后，采购员可以在工作台继续核对、补充和跟进。</p></article></div></div></article>
+            </div>
+        </section>
+
+        <section class="proc-architecture" aria-label="数据协作架构">
+            <p class="proc-kicker">ONE SERVICE · TWO WAYS TO WORK</p><h2>同一份采购数据，两种操作入口。</h2>
+            <div class="proc-architecture-flow"><div><span>采购员</span><strong>右侧栏工作台</strong><small>导入 · 表格 · 跟进</small></div><i>↘</i><div class="proc-core"><span>Harness 宿主</span><strong>采购服务与存储</strong><small>业务规则 · 持久化 · LLM</small></div><i>↗</i><div><span>Agent</span><strong>采购工具</strong><small>查询 · 认领 · 更新</small></div></div>
+            <p class="proc-architecture-note">AI 生成能力使用 Harness 的 deepseek-account 登录态；表格视图配置和 AI 字段结果保存在当前浏览器，采购明细、订单和模型设置由宿主存储。</p>
+        </section>
+
+        <section class="proc-capabilities">
+            <div><p class="proc-kicker">CAPABILITIES</p><h2>采购业务与 AI 表格能力。</h2></div>
+            <div class="proc-capability-grid"><article><span>01</span><h3>Excel 数据导入</h3><p>支持 NC 请购单与采购订单表格导入、预览、字段识别和重复识别。</p></article><article><span>02</span><h3>需求认领与跟进</h3><p>支持跨页认领、批量维护，并保留采购需求的操作记录。</p></article><article><span>03</span><h3>AI 表格操作</h3><p>通过自然语言生成筛选条件、颜色规则和逐行 AI 字段值。</p></article><article><span>04</span><h3>Agent 业务工具</h3><p>把查询、搜索、认领和更新等采购动作注册为 Harness Agent 工具。</p></article></div>
+        </section>
+
+        <section class="proc-footer-cta"><div><p class="proc-kicker">PROJECT REPOSITORY</p><h2>查看源码、安装说明与完整功能文档。</h2></div><a href="https://github.com/Daniel363251/dsh-procurement-intake" target="_blank" rel="noreferrer">打开 GitHub 仓库 <span aria-hidden="true">↗</span></a></section>
+    </main>
+    <footer class="proc-footer"><div><p>把供应链经验转成可落地、可复用的 AI 产品。</p><p>© 2026 Ziyan Wang</p></div></footer>
+    <script src="../project-image-zoom.js"></script>
+</body>
+</html>

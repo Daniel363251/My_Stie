@@ -1,0 +1,9 @@
+.project-zoom-image { cursor: zoom-in; }
+.project-zoom-image:focus-visible { outline: 3px solid #d45b35; outline-offset: 4px; }
+.project-image-dialog { position: fixed; max-width: none; max-height: none; width: auto; height: auto; margin: auto; padding: 48px 18px 18px; overflow: visible; border: 1px solid rgba(255,255,255,.22); background: #18231f; box-shadow: 0 24px 80px rgba(0,0,0,.38); }
+.project-image-dialog::backdrop { background: rgba(11,16,14,.86); backdrop-filter: blur(5px); }
+.project-image-dialog img { display: block; max-width: min(94vw, 1600px); max-height: 86vh; width: auto; height: auto; object-fit: contain; }
+.project-image-dialog button { position: absolute; top: 10px; right: 10px; display: inline-flex; align-items: center; gap: 8px; min-height: 30px; padding: 0 10px; border: 1px solid rgba(255,255,255,.3); background: transparent; color: #fff; cursor: pointer; font: 10px "DM Mono", "PingFang SC", sans-serif; }
+.project-image-dialog button:hover { background: rgba(255,255,255,.12); }
+.project-image-dialog button:focus-visible { outline: 2px solid #f4f1e9; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .project-image-dialog { scroll-behavior: auto; } }

@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="site-nav.css">
+    <link rel="stylesheet" href="project-image-zoom.css">
 </head>
 <body>
     <header class="site-header">
@@ -64,7 +65,19 @@
                 <h2 id="work-title">从业务现场出发，<br><em>让 AI 真正参与工作。</em></h2>
                 <p>从供应链岗位、业务系统和任务流程出发，探索 AI 产品怎样进入真实工作流，并交付可验证的结果。</p>
             </div>
-            <article class="selected-case">
+            <article class="selected-case selected-case-procurement">
+                <div class="selected-case-visual procurement-cover">
+                    <img src="images/projects/procurement-ai-table.png" alt="DeepSeek Harness 采购工作台宣传图，展示 AI 智能表格、采购需求与订单协同界面" loading="lazy">
+                </div>
+                <div class="selected-case-copy">
+                    <div class="case-meta"><span>DeepSeek Harness · 采购工作台</span><span>2026 · 独立项目</span></div>
+                    <h3>把 AI 智能表格，带进采购员的日常工作流。</h3>
+                    <p>面向采购员打造的 Harness 插件，将请购单与采购订单整理、需求认领和跟进，与 AI 筛选、填色和字段生成整合在同一工作台；面板与 Agent 共用宿主侧数据。</p>
+                    <div class="case-tags"><span>AI 智能表格</span><span>采购工作流</span><span>Agent 协同</span></div>
+                    <a class="case-link" href="Project-Detail/Procurement_AI_Table_Project.html">查看采购 AI 工作台案例 <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+            <article class="selected-case selected-case-agentz">
                 <div class="selected-case-visual">
                     <img src="images/projects/agentz-warehouse-landscape.jpg" alt="现代仓储与自动化物流场景，代表供应链 Agent 的应用环境" loading="lazy">
                 </div>
@@ -76,7 +89,7 @@
                     <a class="case-link" href="Project-Detail/AgentZ_Project.html">查看 Agent Z 案例 <span aria-hidden="true">↗</span></a>
                 </div>
             </article>
-            <article class="selected-case">
+            <article class="selected-case selected-case-shengyi">
                 <div class="selected-case-visual">
                     <img src="images/projects/shengyi-guanjia-product.jpg" alt="生意管家 AI 客户端首页，展示新任务入口、技能商店和商家任务建议" loading="lazy">
                 </div>
@@ -88,7 +101,7 @@
                     <a class="case-link" href="Project-Detail/Shengyi_Guanjia_Project.html">查看 AI 客户端框架案例 <span aria-hidden="true">↗</span></a>
                 </div>
             </article>
-            <article class="selected-case">
+            <article class="selected-case selected-case-cli">
                 <div class="selected-case-visual">
                     <img src="images/projects/supply-chain-cli-cover.jpg" alt="供应链项目脚手架 CLI 的视觉示意：终端初始化 WMS 项目，并生成基础结构与 AI 配置" loading="lazy">
                 </div>
@@ -132,5 +145,6 @@
         <p>AI 产品 · 供应链 Agent · 商家 AI · 国际化交付</p>
         <span>© 2026 Ziyan Wang</span>
     </footer>
+    <script src="project-image-zoom.js"></script>
 </body>
 </html>

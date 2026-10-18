@@ -61,10 +61,12 @@ img { display: block; max-width: 100%; }
 .selected-case + .selected-case { margin-top: 48px; }
 .selected-case-visual { position: relative; width: 100%; height: 360px; overflow: hidden; background: #dfe4ea; }
 .selected-case-visual img { width: 100%; height: 100%; object-fit: cover; }
-.selected-case:nth-of-type(2) .selected-case-visual { background: #eef3fc; }
-.selected-case:nth-of-type(2) .selected-case-visual img,
-.selected-case:nth-of-type(3) .selected-case-visual img { object-fit: contain; }
-.selected-case:nth-of-type(3) .selected-case-visual { background: #142e27; }
+.selected-case-visual.procurement-cover { background: #e8f1ff; }
+.selected-case-visual.procurement-cover img { object-fit: contain; }
+.selected-case-shengyi .selected-case-visual { background: #eef3fc; }
+.selected-case-shengyi .selected-case-visual img,
+.selected-case-cli .selected-case-visual img { object-fit: contain; }
+.selected-case-cli .selected-case-visual { background: #142e27; }
 .selected-case-copy { display: flex; min-height: 360px; flex-direction: column; align-items: flex-start; padding: 28px clamp(24px, 3vw, 38px); }
 .case-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; width: 100%; color: var(--muted); font: 9px var(--mono); letter-spacing: .04em; }
 .selected-case-copy h3 { max-width: 500px; margin: 27px 0 12px; font-size: clamp(23px, 2.4vw, 30px); line-height: 1.35; letter-spacing: -.045em; }
