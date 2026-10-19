@@ -18,7 +18,7 @@
 .agentz-flow article > span { color: var(--primary-color); font: 9px "DM Mono", monospace; }
 .agentz-flow h3 { margin: 17px 0 8px; color: var(--text-primary); font-size: 14px; }
 .agentz-flow p, .agentz-capabilities p { margin: 0; color: var(--text-secondary); font-size: 12px; line-height: 1.8; }
-.agentz-flow > i { color: var(--primary-color); font-style: normal; text-align: center; }
+.agentz-flow > .icon-inline { color: var(--primary-color); text-align: center; }
 .agentz-capabilities, .agentz-scope-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .agentz-capabilities article, .agentz-scope-grid article { padding: 21px; border: 1px solid var(--border-color); background: var(--bg-card); }
 .agentz-capabilities article > span, .agentz-scope-grid article > span { color: var(--primary-color); font: 8px "DM Mono", monospace; letter-spacing: .07em; }

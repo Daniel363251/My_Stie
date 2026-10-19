@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="从没有专业 SRM、主要依赖多维表的物流采购场景出发，讨论 AI 智能表格如何降低上手门槛、连接 Agent，并处理本地数据与模型调用的边界。">
+    <title>采购没有 SRM，AI 工作台应该从哪一步开始？ | Ziyan Wang</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../site-editorial.css">
+    <link rel="stylesheet" href="../site-nav.css">
+    <link rel="stylesheet" href="article-procurement-ai-table.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <a class="wordmark" href="../index.html" aria-label="Ziyan Wang 首页">
+            <span class="wordmark-mark">Z</span>
+            <span>ZIYAN WANG<span class="wordmark-sub">AI PRODUCT · SUPPLY CHAIN</span></span>
+        </a>
+        <nav class="main-nav" aria-label="主导航">
+            <a class="nav-home" href="../index.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2h-4v-7H9v7H5a2 2 0 0 1-2-2z"/></svg>首页</a>
+            <a class="nav-work" href="../index.html#work"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18M10 12v2h4v-2"/></svg>精选案例</a>
+            <a href="../about.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>个人履历</a>
+            <a href="../experience.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h6l2 2h10a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="M8 12v5M16 12v5M8 15h8"/></svg>项目经历</a>
+            <a href="../articles.html" aria-current="page"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2"/></svg>文章</a>
+            <a class="nav-contact" href="mailto:ruitu.wzy@gmail.com"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>联系我</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="product-article-section section">
+            <div class="product-article-container">
+                <a href="../articles.html" class="product-article-back"><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6M9 12h12"/></svg>返回文章列表</a>
+                <article class="product-article">
+                    <header class="product-article-header">
+                        <div class="product-article-meta"><span>2026-10-19</span><span>产品实践 · AI 工作方式</span></div>
+                        <p class="product-article-kicker">FIELD NOTES / PROCUREMENT WORKFLOW</p>
+                        <h1>采购没有 SRM，AI 工作台应该从哪一步开始？</h1>
+                        <p class="product-article-deck">从一家主要依赖多维表的物流企业出发，我把问题收敛到一款采购工作台：业务人员能直接上手，Agent 能在规则内协作，采购业务库留在本地。</p>
+                        <div class="product-article-tags"><span>DeepSeek Harness</span><span>AI 智能表格</span><span>采购产品</span></div>
+                    </header>
+
+                    <figure class="product-article-cover">
+                        <img src="../images/projects/procurement-ai-table.png" alt="DeepSeek Harness 采购工作台与 AI 智能表格产品界面">
+                        <figcaption>采购工作台把请购整理、订单跟进和 AI 表格能力放在同一处。</figcaption>
+                    </figure>
+
+                    <div class="product-article-content">
+                        <p class="product-article-lead">笔者所在的物流企业数字化程度不高，没有专业 SRM，采购人员主要靠多维表和 Excel 管理业务数据，也会与已有业务系统协作。产品要解决的第一个问题很具体：怎样让分散的采购明细变成可以持续处理的工作。</p>
+
+                        <h2>先接住工作流，再增加智能</h2>
+                        <p>日常工作从请购明细开始。采购员导入 NC 请购单，筛选并认领自己负责的需求，补充供应商和预计发货时间，再写下下一步动作；采购订单进来后，再核对它与请购的关系并持续跟进交付状态。数据往往已经存在，麻烦在于每次处理都要重新找、重新判断，还要记住跟进到哪一步。</p>
+                        <p>所以第一步是把已有表格中的工作接起来，暂不铺开一套完整 SRM。工作台把需求分成“待筛选”和“我的需求”，再把订单与需求关联。每行数据都有清楚的归属和当前状态，重新导入时也会保留已经认领的状态与跟进信息。</p>
+                        <p>这个范围选择影响产品形态。它沿用采购员熟悉的 Excel 和表格操作，把工作放进 Harness 右侧栏；现阶段先服务请购整理与订单跟进，不要求团队先迁移全部采购流程。对数字化基础有限的团队来说，先减少每天反复整理和查找的工作，比一开始追求系统覆盖面更实际。</p>
+
+                        <aside class="product-callout">
+                            <span>产品判断</span>
+                            <p>产品从采购员每天处理的那张表切入，让它承载需求归属、持续跟进和下一步动作。</p>
+                        </aside>
+
+                        <h2>让 AI 操作落到表格里的业务对象</h2>
+                        <p>AI 智能表格的价值，在于让自然语言指令直接作用于表格。采购员可以用自然语言生成筛选规则、填色规则，也可以创建逐行计算的 AI 字段。模型负责理解指令并生成结构化结果；宿主服务检查字段和规则是否有效，表格再应用这些结果。AI 输出因此进入现有的表格工作，采购员不必再把一段回答手动复制到业务数据中。</p>
+                        <p>Agent 也通过受限的采购工具读取和更新需求。面板与 Agent 最终调用同一套宿主采购服务，因此认领、跟进和权限边界不必在两套入口分别实现。Agent 可以查询、认领、更新跟进字段；采购订单状态仍由工作台的订单流程处理。这个边界让自动化动作更清楚，也便于采购员判断哪些变化来自自己、哪些由 Agent 执行。</p>
+
+                        <figure class="product-diagram" aria-labelledby="shared-workflow-caption">
+                            <figcaption id="shared-workflow-caption">
+                                <span>01 / SHARED WORKFLOW</span>
+                                <strong>人和 Agent 操作同一份采购业务数据</strong>
+                            </figcaption>
+                            <div class="coordination-diagram" role="img" aria-label="采购员负责业务判断和例外处理，Agent 执行明确的查询与跟进任务，两者通过同一采购服务共享数据和规则">
+                                <div class="coordination-card">
+                                    <span>HUMAN · 采购员</span>
+                                    <h3>判断业务与处理例外</h3>
+                                    <p>确认需求归属，判断供应商与交付安排，处理需要经验和授权的决定。</p>
+                                </div>
+                                <div class="coordination-link" aria-hidden="true"><span>共享采购服务</span><b>↔</b></div>
+                                <div class="coordination-card">
+                                    <span>AGENT · Harness</span>
+                                    <h3>执行明确的工作任务</h3>
+                                    <p>按授权查询需求、认领明细或更新跟进字段，并反馈查询或更新结果。</p>
+                                </div>
+                            </div>
+                            <p class="diagram-note">采购数据与业务规则集中在宿主服务；工具接口约束 Agent 能执行的操作。</p>
+                        </figure>
+
+                        <h2>面向业务人员，复杂度要留在产品里</h2>
+                        <p>插件面向采购人员，他们不需要专业 IT 背景。对他们来说，表格能不能读、导入有没有预览、点错后会怎样，远比底层用了什么模型更直接。产品沿用 Excel 导入和熟悉的列视图，把自然语言指令转成可以检查的规则；AI 输出格式不符合约束时会报错，不会直接写成采购业务变更。</p>
+                        <p>“即插即用”需要让用户沿着已有工作习惯开始，把数据建模、规则编写和流程配置留在产品设计中。插件运行在 DeepSeek Harness 里，安装和模型账户依赖宿主环境；因此，这里的即插即用指采购操作路径尽量简单，运行仍有明确前提。</p>
+
+                        <h2>本地存储，不等于所有 AI 计算都在本机</h2>
+                        <p>出于数据安全考虑，采购业务数据库由本地 Harness 宿主管理。导入的采购明细、订单和基础资料保存在宿主存储域；表格列配置以及 AI 字段定义和结果则保存在当前浏览器。它们的数据位置和用途并不相同。</p>
+                        <p>模型调用也有明确边界：AI 筛选和填色会发送用户指令及可用字段信息；AI 字段计算会发送参与计算的选定行数据，一次最多 50 行。当前 AI 功能使用 Harness 的 <code>deepseek-account</code> 模型服务。产品可以准确地说采购数据库保存在本地；若承诺任何采购数据都不会离开本机，就与当前实现不符。企业若要求字段级数据也不能发送到外部模型，就需要本地推理，或进一步限制 AI 可读取的字段。</p>
+
+                        <figure class="product-diagram data-boundary" aria-labelledby="data-boundary-caption">
+                            <figcaption id="data-boundary-caption">
+                                <span>02 / DATA BOUNDARY</span>
+                                <strong>采购记录留在本地，AI 请求按功能经过模型服务</strong>
+                            </figcaption>
+                            <div class="data-flow-diagram" role="img" aria-label="本地 Harness 宿主保存采购数据，工作台和 Agent 访问同一采购服务；AI 操作根据任务把指令、字段元数据或最多 50 行选定字段发送给模型服务，模型结果返回本地校验">
+                                <section class="data-zone data-zone-local">
+                                    <span class="data-zone-label">本地 · Harness 宿主</span>
+                                    <div class="data-node">采购工作台 / AI Table</div>
+                                    <div class="data-arrow" aria-hidden="true">↓</div>
+                                    <div class="data-node data-node-primary">采购服务 + Storage Domain</div>
+                                    <small>请购明细 · 订单 · 基础资料</small>
+                                    <div class="data-agent">Harness Agent 通过采购工具访问同一服务</div>
+                                </section>
+                                <div class="data-boundary-arrow">
+                                    <span>模型请求</span>
+                                    <b aria-hidden="true">→</b>
+                                    <small>指令和字段信息<br>或最多 50 行选定字段</small>
+                                </div>
+                                <section class="data-zone data-zone-model">
+                                    <span class="data-zone-label">模型服务</span>
+                                    <div class="data-node">deepseek-account</div>
+                                    <small>返回结构化规则或字段结果</small>
+                                </section>
+                            </div>
+                            <p class="diagram-note">“业务库本地存储”和“AI 推理数据不外发”是两项不同的安全要求。</p>
+                        </figure>
+
+                        <h2>仍需继续验证的产品问题</h2>
+                        <p>当前持久化模型按单机、单采购员设计，AI 字段配置也只保存在当前浏览器。Agent 能访问宿主侧采购记录，但不会自动读取浏览器里的 AI 字段结果。团队协作、跨设备视图和字段级数据策略，都需要在更大范围使用前补齐。</p>
+                        <p>这些限制也给出了产品演进的先后顺序：先验证采购员是否愿意在工作台里完成请购整理与交付跟进，再根据真实协作方式处理身份、权限和共享；涉及敏感数据的 AI 能力，则先说明输入范围和推理路径，再决定是否需要本地模型。</p>
+
+                        <div class="product-article-conclusion">
+                            <span>TAKEAWAY</span>
+                            <p>AI 进入业务工作流，起点是一个具体业务对象和下一步动作。对这款采购工作台来说，这个对象是请购明细；表格负责承载人工判断，Agent 负责执行受限任务，宿主服务把两者连接起来。</p>
+                        </div>
+                    </div>
+                </article>
+                <div class="product-article-bottom"><a href="../articles.html">回到文章列表</a><a href="../Project-Detail/Procurement_AI_Table_Project.html">查看采购工作台案例</a></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section"><h3 class="footer-title">Ziyan's Space</h3><p class="footer-description">专注于 AI 驱动的供应链创新，分享技术洞察与行业思考。</p></div>
+                <div class="footer-section"><h4 class="footer-subtitle">快速链接</h4><ul class="footer-links"><li><a href="../index.html">首页</a></li><li><a href="../about.html">关于我</a></li><li><a href="../experience.html">经验</a></li><li><a href="../articles.html">文章</a></li><li><a href="../contact.html">联系</a></li></ul></div>
+                <div class="footer-section"><h4 class="footer-subtitle">直接联系</h4><p><a href="mailto:ruitu.wzy@gmail.com">ruitu.wzy@gmail.com</a></p></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Ziyan Wang. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+    <script src="../site-icons.js"></script>
+    <script src="../site-back-to-top.js"></script>
+</body>
+</html>

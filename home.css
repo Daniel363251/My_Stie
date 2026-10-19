@@ -63,6 +63,8 @@ img { display: block; max-width: 100%; }
 .selected-case-visual img { width: 100%; height: 100%; object-fit: cover; }
 .selected-case-visual.procurement-cover { background: #e8f1ff; }
 .selected-case-visual.procurement-cover img { object-fit: contain; }
+.selected-case-agentz .selected-case-visual { background: #eaf0fa; }
+.selected-case-agentz .selected-case-visual img { object-fit: contain; }
 .selected-case-shengyi .selected-case-visual { background: #eef3fc; }
 .selected-case-shengyi .selected-case-visual img,
 .selected-case-cli .selected-case-visual img { object-fit: contain; }

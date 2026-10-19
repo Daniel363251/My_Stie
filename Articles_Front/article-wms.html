@@ -390,6 +390,55 @@
         .article-detail-content p:nth-child(3) { animation-delay: 0.3s; }
         .article-detail-content p:nth-child(4) { animation-delay: 0.4s; }
         .article-detail-content p:nth-child(5) { animation-delay: 0.5s; }
+
+        /* Compact document-style reading layout */
+        #progress-container { height: 2px; }
+        #progress-bar { background: var(--primary-color); box-shadow: none; }
+        .main-content { padding-top: 0 !important; }
+        .article-detail-section.section { padding: 54px 0 88px; }
+        .article-detail-container { width: min(1000px, calc(100% - 40px)); max-width: none; padding: 0; }
+        .back-to-articles { margin-bottom: 18px; font-size: 11px; }
+        .article-detail { padding: clamp(28px, 5vw, 56px); border-color: #dedbd0; background: #fbfaf6; }
+        .article-detail-header { margin-bottom: 28px; padding-bottom: 23px; border-bottom: 1px solid var(--border-color); }
+        .article-detail-meta { margin-bottom: 14px; }
+        .article-detail-date { font-size: 11px; }
+        .article-detail-category { padding: 4px 8px; border-radius: 2px; background: #e9e5da; font-size: 10px; }
+        .article-detail-title { margin-bottom: 16px; font-size: clamp(30px, 4vw, 38px); line-height: 1.28; letter-spacing: -.045em; }
+        .article-detail-tags { gap: 7px; margin-bottom: 0; }
+        .article-detail-tag { padding: 4px 8px; border-radius: 2px; background: transparent; font-size: 10px; }
+        .article-detail-content { max-width: 100%; font-size: 16px; line-height: 1.95; letter-spacing: 0; text-align: left; text-justify: auto; }
+        .article-detail-content h1 { display: block; margin: 38px 0 14px; padding-bottom: 0; font-size: 25px; line-height: 1.5; letter-spacing: -.035em; }
+        .article-detail-content h1::after { display: none; }
+        .article-detail-content h1 > i { display: none; }
+        .article-detail-content h2 { margin: 30px 0 12px; padding-left: 12px; font-size: 21px; line-height: 1.5; }
+        .article-detail-content h2::before { top: 5px; bottom: 5px; width: 2px; }
+        .article-detail-content p { margin: 0 0 14px; }
+        .article-detail-content strong { padding: 0; background: none; }
+        .article-intro { margin-bottom: 24px; padding: 16px 18px; border-left-width: 2px; background: #f1eee6; font-size: 15px; line-height: 1.85; }
+        .article-intro::before { display: none; }
+        .highlight-block, .quote-block { margin: 24px 0; padding: 16px 18px; }
+        .article-divider { margin: 30px 0; background: var(--border-color); }
+        .article-divider::before { display: none; }
+        .article-detail-content p { animation: none; opacity: 1; }
+        .article-navigation { margin-top: 28px; padding-top: 20px; }
+
+        @media (max-width: 768px) {
+            .article-detail-section.section { padding: 36px 0 64px; }
+            .article-detail-container { width: calc(100% - 32px); padding: 0; }
+            .article-detail { padding: 24px 20px; }
+            .article-detail-title { font-size: clamp(27px, 7vw, 34px); }
+            .article-detail-content { font-size: 15px; }
+            .article-detail-content h1 { font-size: 22px; }
+            .article-detail-content h2 { font-size: 19px; }
+        }
+
+        @media (max-width: 480px) {
+            .article-detail-container { width: calc(100% - 28px); padding: 0; }
+            .article-detail { padding: 20px 16px; }
+            .article-detail-meta { flex-direction: row; align-items: center; }
+            .article-detail-title { font-size: 27px; }
+            .article-intro, .highlight-block, .quote-block { padding: 14px; }
+        }
     </style>
 </head>
 <body>
@@ -404,11 +453,12 @@
             <span>ZIYAN WANG<span class="wordmark-sub">AI PRODUCT · SUPPLY CHAIN</span></span>
         </a>
         <nav class="main-nav" aria-label="主导航">
-            <a href="../index.html#work">精选案例</a>
-            <a href="../about.html">个人履历</a>
-            <a href="../experience.html">项目经历</a>
-            <a href="../articles.html" aria-current="page">文章</a>
-            <a class="nav-contact" href="mailto:ruitu.wzy@gmail.com">联系我 <span aria-hidden="true">↗</span></a>
+            <a class="nav-home" href="../index.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2h-4v-7H9v7H5a2 2 0 0 1-2-2z"/></svg>首页</a>
+            <a class="nav-work" href="../index.html#work"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18M10 12v2h4v-2"/></svg>精选案例</a>
+            <a href="../about.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>个人履历</a>
+            <a href="../experience.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h6l2 2h10a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="M8 12v5M16 12v5M8 15h8"/></svg>项目经历</a>
+            <a href="../articles.html" aria-current="page"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2"/></svg>文章</a>
+            <a class="nav-contact" href="mailto:ruitu.wzy@gmail.com"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>联系我</a>
         </nav>
     </header>
 
@@ -631,5 +681,7 @@
         
         // 布局切换功能已移除
     </script>
+    <script src="../site-icons.js"></script>
+    <script src="../site-back-to-top.js"></script>
 </body>
 </html>
