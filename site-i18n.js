@@ -126,7 +126,23 @@
 
     const originalText = new WeakMap();
     const originalAttributes = new WeakMap();
+    const originalMarkup = new WeakMap();
     const navLabels = { '.nav-home': ['首页', 'Home'], '.nav-work': ['精选案例', 'Selected Work'], '.main-nav > a[href*="about.html"]': ['个人履历', 'About'], '.main-nav > a[href*="experience.html"]': ['项目经历', 'Experience'], '.main-nav > a[href*="articles.html"]': ['文章', 'Writing'], '.nav-contact': ['联系我', 'Contact'] };
+
+    function translateProofMetrics(language) {
+        const englishMetrics = [['~5', 'B'], ['4', 'years'], ['6', 'countries'], ['130', 'M+']];
+        document.querySelectorAll('.proof-strip .proof-item strong').forEach((metric, index) => {
+            if (!originalMarkup.has(metric)) originalMarkup.set(metric, metric.innerHTML);
+            if (language !== 'en' || !englishMetrics[index]) {
+                metric.innerHTML = originalMarkup.get(metric);
+                return;
+            }
+            const [value, unit] = englishMetrics[index];
+            const unitLabel = document.createElement('span');
+            unitLabel.textContent = unit;
+            metric.replaceChildren(document.createTextNode(value), unitLabel);
+        });
+    }
 
     function setTextNodes(language) {
         const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
@@ -157,6 +173,7 @@
         const isEnglish = language === 'en';
         document.documentElement.lang = isEnglish ? 'en' : 'zh-CN';
         setTextNodes(language);
+        translateProofMetrics(language);
         const pageTitles = {
             'index.html': ['Ziyan Wang — Supply Chain Product', 'Ziyan Wang — Supply Chain AI Product'],
             'about.html': ['关于我 | Ziyan Wang', 'About | Ziyan Wang'],
