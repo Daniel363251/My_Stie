@@ -82,7 +82,7 @@ a { transition: color .18s ease, background-color .18s ease; }
 .career-timeline { background: var(--surface-color); }
 .career-kicker { margin: 0 0 15px; color: var(--primary-color); font: 9px "DM Mono", monospace; letter-spacing: .14em; }
 .career-timeline .section-title { margin-bottom: 9px; }
-.career-intro { max-width: 670px; margin: 0; color: var(--text-secondary); font-size: 12px; line-height: 1.9; }
+.career-intro { max-width: 920px; margin: 0 auto; color: var(--text-secondary); font-size: 12px; line-height: 1.9; text-align: center; }
 .career-list { max-width: 920px; margin-top: 30px; border-top: 1px solid var(--border-color); }
 .career-item { display: grid; grid-template-columns: 150px 1fr 170px; align-items: start; gap: 20px; padding: 21px 0; border-bottom: 1px solid var(--border-color); }
 .career-date { padding-top: 3px; color: var(--primary-color); font: 10px "DM Mono", monospace; }
@@ -302,6 +302,7 @@ a { transition: color .18s ease, background-color .18s ease; }
     .projects-section .md-section-title { margin-bottom: 20px; }
     .about-hero-content { flex-direction: column-reverse; align-items: flex-start; }
     .about-image { width: min(76%, 320px); }
+    .career-intro { text-align: left; }
     .career-item { grid-template-columns: 1fr; gap: 7px; }
     .career-heading { gap: 10px; }
     .career-tag { justify-self: start; }
