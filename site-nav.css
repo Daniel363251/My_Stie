@@ -5,7 +5,7 @@
     margin-inline: auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     border-bottom: 1px solid #d8d7cc;
     color: #18231f;
     font-family: "Manrope", "PingFang SC", "Microsoft YaHei", sans-serif;
@@ -44,6 +44,7 @@
 .main-nav {
     display: flex;
     align-items: center;
+    margin-left: auto;
     gap: clamp(18px, 3vw, 42px);
     font-size: 12px;
     font-weight: 600;
@@ -96,4 +97,83 @@
     .main-nav > a:not(.nav-home):not(.nav-contact) { display: none; }
     .main-nav .nav-contact { padding: 9px 11px; }
     .back-to-top { right: 20px; bottom: 20px; width: 48px; height: 48px; }
+}
+
+/* Language and mobile navigation controls. */
+.site-header { position: relative; z-index: 100; }
+.site-header-tools { display: flex; align-items: center; gap: 10px; margin-left: 16px; }
+.language-toggle, .menu-toggle {
+    min-height: 38px;
+    padding: 0 12px;
+    border: 1px solid rgba(24, 35, 31, .28);
+    border-radius: 2px;
+    background: transparent;
+    color: inherit;
+    font: 600 11px "DM Mono", "SFMono-Regular", Consolas, monospace;
+    letter-spacing: .08em;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+.language-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 7px; }
+.language-icon { width: 15px; height: 15px; flex: 0 0 auto; stroke: currentColor; stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.language-toggle:hover, .menu-toggle:hover { border-color: #d45b35; color: #d45b35; }
+.language-toggle:focus-visible, .menu-toggle:focus-visible { outline: 2px solid #d45b35; outline-offset: 3px; }
+.menu-toggle { display: none; width: 40px; padding: 0; align-items: center; justify-content: center; }
+.menu-toggle-icon, .menu-toggle-icon::before, .menu-toggle-icon::after {
+    display: block; width: 16px; height: 1.5px; background: currentColor; transition: transform .2s ease;
+}
+.menu-toggle-icon { position: relative; }
+.menu-toggle-icon::before, .menu-toggle-icon::after { position: absolute; left: 0; content: ""; }
+.menu-toggle-icon::before { top: -5px; }
+.menu-toggle-icon::after { top: 5px; }
+.menu-toggle[aria-expanded="true"] .menu-toggle-icon { background: transparent; }
+.menu-toggle[aria-expanded="true"] .menu-toggle-icon::before { top: 0; transform: rotate(45deg); }
+.menu-toggle[aria-expanded="true"] .menu-toggle-icon::after { top: 0; transform: rotate(-45deg); }
+
+@media (max-width: 920px) {
+    .site-header { width: calc(100% - 40px); }
+    .site-header-tools { gap: 8px; margin-left: 12px; }
+    .main-nav { gap: 14px; }
+}
+@media (max-width: 960px) {
+    .site-header { width: calc(100% - 32px); height: 68px; }
+    .wordmark { gap: 9px; }
+    .wordmark-mark { width: 32px; height: 32px; }
+    .wordmark-sub { font-size: 8px; }
+    .site-header-tools { gap: 7px; margin-left: auto; }
+    .language-toggle, .menu-toggle { min-height: 38px; }
+    .language-toggle { padding-inline: 10px; }
+    .menu-toggle { display: inline-flex; }
+    .main-nav {
+        position: absolute;
+        top: calc(100% + 1px);
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px;
+        border: 1px solid #d8d7cc;
+        border-top: 0;
+        background: #f4f1e9;
+        box-shadow: 0 14px 28px rgba(24, 35, 31, .12);
+        font-size: 14px;
+    }
+    .main-nav.is-open { display: flex; flex-direction: column; }
+    .main-nav > a, .main-nav > a:not(.nav-home):not(.nav-contact) {
+        display: flex;
+        min-height: 48px;
+        align-items: center;
+        padding: 0 12px;
+        border-bottom: 1px solid rgba(24, 35, 31, .1);
+        white-space: normal;
+    }
+    .main-nav > a:last-child { border-bottom: 0; }
+    .main-nav .nav-contact { justify-content: flex-start; margin-top: 6px; border: 1px solid currentColor; }
+    .main-nav > a:hover { background: rgba(24, 35, 31, .04); }
+}
+@media (max-width: 380px) {
+    .site-header { width: calc(100% - 24px); }
+    .wordmark { font-size: 10px; }
+    .wordmark-sub { letter-spacing: .04em; }
 }
