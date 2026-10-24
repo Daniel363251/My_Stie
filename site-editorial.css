@@ -96,7 +96,7 @@ a { transition: color .18s ease, background-color .18s ease; }
 .career-logo-taobao { max-width: 68px; }
 .career-logo-shanghai { max-width: 92px; }
 .career-company-logos { display: flex; flex: 0 0 auto; align-items: center; gap: 11px; }
-.career-logo-michelin { width: 82px; height: auto; }
+.career-logo-michelin { width: 76px; height: 36px; object-fit: cover; object-position: 50% 0%; }
 .career-logo-dell { width: 96px; height: auto; }
 .career-logo-alibaba { width: 72px; height: auto; }
 .career-tags { display: flex; align-items: flex-start; justify-self: end; gap: 6px; flex-wrap: wrap; }
@@ -279,7 +279,7 @@ a { transition: color .18s ease, background-color .18s ease; }
     .career-logo-cainiao { max-width: 50px; }
     .career-logo-taobao { max-width: 60px; }
     .career-logo-shanghai { max-width: 78px; }
-    .career-logo-michelin { width: 72px; }
+    .career-logo-michelin { width: 72px; height: 35px; }
     .career-logo-dell { width: 84px; }
     .career-logo-alibaba { width: 64px; }
     .experience-hero .md-container { padding-inline: 24px; }
@@ -326,7 +326,7 @@ a { transition: color .18s ease, background-color .18s ease; }
     .career-logo-taobao { max-width: 54px; }
     .career-logo-shanghai { max-width: 72px; }
     .career-company-logos { gap: 9px; }
-    .career-logo-michelin { width: 72px; }
+    .career-logo-michelin { width: 64px; height: 32px; }
     .career-logo-dell { width: 82px; }
     .career-logo-alibaba { width: 60px; }
     .career-item h3 { font-size: 14px; }
