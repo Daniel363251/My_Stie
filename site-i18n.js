@@ -202,6 +202,14 @@
         });
     }
 
+    function translateAboutDescription(language) {
+        const description = document.querySelector('.about-description');
+        if (!description) return;
+        description.textContent = language === 'en'
+            ? 'I have worked across supply chain and merchant products at Alibaba. Over the past two years, I have shifted my focus to AI, contributing to merchant AI products, supply chain agents, and AI upgrades to existing supply chain software. I turn frontline workflows and system rules into product opportunities, then shape complex problems into solutions that teams can understand, users can use, and businesses can validate.'
+            : '我在阿里持续负责供应链与商家产品。近两年工作重心转向 AI：先后参与商家 AI 产品、供应链 Agent，以及存量供应链软件的 AI+ 改造。我擅长从一线流程和系统规则中找到产品切口，再把复杂问题拆成团队可理解、用户可使用、业务可验证的方案。';
+    }
+
     function setTextNodes(language) {
         const isExperiencePage = location.pathname.split('/').pop() === 'experience.html';
         const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
@@ -284,6 +292,7 @@
         const isEnglish = language === 'en';
         document.documentElement.lang = isEnglish ? 'en' : 'zh-CN';
         setTextNodes(language);
+        if (location.pathname.split('/').pop() === 'about.html') translateAboutDescription(language);
         translateProofMetrics(language);
         const pageTitles = {
             'index.html': ['Ziyan Wang — Supply Chain Product', 'Ziyan Wang — Supply Chain AI Product'],
