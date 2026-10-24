@@ -96,8 +96,10 @@ a { transition: color .18s ease, background-color .18s ease; }
 .career-logo-shanghai { max-width: 72px; }
 .career-company-logos { display: flex; flex: 0 0 auto; align-items: center; gap: 9px; }
 .career-logo-michelin { width: 72px; height: auto; }
-.career-logo-dell { width: 19px; height: 19px; }
+.career-logo-dell { width: 82px; height: auto; }
 .career-logo-alibaba { width: 60px; height: auto; }
+.career-tags { display: flex; align-items: flex-start; justify-self: end; gap: 6px; flex-wrap: wrap; }
+.career-tags .career-tag { justify-self: auto; }
 .career-item h3 { margin: 0 0 6px; color: var(--text-primary); font-size: 14px; }
 .career-heading h3 { margin: 0; }
 .career-item p { max-width: 620px; margin: 0; color: var(--text-secondary); font-size: 11px; line-height: 1.9; }
@@ -305,7 +307,7 @@ a { transition: color .18s ease, background-color .18s ease; }
     .career-intro { text-align: left; }
     .career-item { grid-template-columns: 1fr; gap: 7px; }
     .career-heading { gap: 10px; }
-    .career-tag { justify-self: start; }
+    .career-tags { justify-self: start; }
     .skills-categories { grid-template-columns: 1fr; }
     .projects-section .md-container { padding-inline: 16px; }
     .md-card-content { padding: 18px; }
